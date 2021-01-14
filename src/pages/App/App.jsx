@@ -63,6 +63,14 @@ class App extends Component {
             user ? <Users /> : <Redirect to="/login" />
           }
         />
+
+        {/* Route for ArticleSearchPage */}
+
+        {/* Route for Personal Profile */}
+
+          {/* Route for Article Show Page */}
+
+
       </>
     );
   }
