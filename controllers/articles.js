@@ -1,3 +1,16 @@
+const Article = require('../models/article')
+
+module.exports = {
+    // slated functions
+}
+
+
+// have a function here that deals with the axios,get function, which take sthe form query and uses tempalte literals to append into our api url which will passed through 
+
+// create function, which takes req.body data from search results in Article Cards, push it to UserCollection
+
+
+
 // API CALLS
 
 
