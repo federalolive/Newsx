@@ -16,7 +16,7 @@ const commentSchema = new Schema ({
 
 const articleSchema = new Schema ({
     headline: String,
-    articleImage: {Type: String, default: 'TBD'},
+    articleImage: {Type: String},
     description: {Type: String, default: 'None Provided'},
     articleUrl: String,
     author: {Type: String, default: 'Not Listed, See Source Link'},
