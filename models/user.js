@@ -8,7 +8,7 @@ const userSchema = new Schema({
   name: String,
   email: {type: String, required: true, lowercase: true, unique: true},
   password: String,
-  avatar: {Type: String, default: 'TBD'},
+  avatar: String,
   bio: String,
   articleCollection: [{type: Schema.Types.ObjectId, ref: 'Article'}]
 }, {

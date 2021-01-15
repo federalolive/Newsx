@@ -5,6 +5,7 @@ import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import authService from "../../services/authService";
 import Users from '../Users/Users'
+import ArticleSearch from '../ArticleSearch/ArticleSearch'
 import "./App.css";
 
 class App extends Component {
@@ -63,12 +64,24 @@ class App extends Component {
             user ? <Users /> : <Redirect to="/login" />
           }
         />
+        <Route
+          exact path="/articles"
+          render={() =>
+            user ? <ArticleSearch 
+              user = {this.state.user}
+            /> 
+            : 
+            <Redirect to="/login" />
+          }
+        />
 
         {/* Route for ArticleSearchPage */}
 
         {/* Route for Personal Profile */}
 
           {/* Route for Article Show Page */}
+
+          {/* Route for Landing page */}
 
 
       </>
