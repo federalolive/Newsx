@@ -106,9 +106,10 @@ class App extends Component {
         />
         <Route
           exact path="/users/show"
-          render={() =>
+          render={({ location }) =>
             user ? <UserProfilePage 
             user = {this.state.user}
+            location={ location }
         /> 
           : 
           <Redirect to="/login" />
