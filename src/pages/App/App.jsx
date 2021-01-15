@@ -108,7 +108,6 @@ class App extends Component {
           exact path="/users/show"
           render={({ location }) =>
             user ? <UserProfilePage 
-            user = {this.state.user}
             location={ location }
         /> 
           : 

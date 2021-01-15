@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const UserCard = (props) => {
+const UserCard = ({ user }) => {
     return ( 
         <>
-            <p>{ props.user.name }</p>
+            <p>{ user.name }</p>
             <Link to={{
                 pathname:'/users/show',
-                // state: { user }
+                state: { user }
             }}
             >
                 View Profile

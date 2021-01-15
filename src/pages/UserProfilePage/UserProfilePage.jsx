@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import "./UserProfilePage.css"
 
-class UserProfilePage extends Component {
-    state = {  }
-    render() { 
-        return ( 
-            <>
-                <h1>User Profile Page</h1>
-            </>
-         );
-    }
+
+const UserProfilePage = (props) => {
+    console.log(props)
+    return ( 
+        <>
+        <p>{props.location.state.user.name}</p>
+        </>
+     );
 }
+
  
 export default UserProfilePage;

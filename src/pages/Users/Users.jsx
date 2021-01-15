@@ -19,6 +19,7 @@ class Users extends Component {
         {this.state.users.map((user) => (
         <UserCard 
           user={user}
+          key={user._id}
         />
         ))}
       </>
