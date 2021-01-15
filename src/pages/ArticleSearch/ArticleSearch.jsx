@@ -1,12 +1,51 @@
 import React, { Component } from 'react';
 import './ArticleSearch.css'
+import * as articleAPI from '../../services/article-api'
 
 class ArticleSearch extends Component {
-    state = {  }
+    state = { 
+        articles: [],
+        formData: {
+            query: '',   
+        }       
+     }
+     handleSubmit = (e) => { 
+         // prevents user from triggering an autmatic refresh of the page and api call before they finish typing and submitting their query
+         e.preventDefault()
+         this.handleArticleSearch(this.state.formData)
+     }
+     handleChange= (e) => {
+         // handle change is resetting for formData in state with the input from the user, which will then be passed into our handleArticleSearch function above
+        const formData = {...this.state.formData, [e.target.name]: e.target.value}
+        this.setState({formData:formData})
+
+     }
+     handleArticleSearch = async(formData) => {
+         // this sets our articles array in state to the result of our api call we are waiting for, articleSearch, which lives in our services folder and allows us to talk to the backend where our actual api call lives
+        const articles = await articleAPI.articleSearch(formData)
+        console.log(articles.articles)
+        this.setState({articles: articles.articles})
+
+     }
     render() { 
         return ( 
             <>
             <h1>Article Search Page</h1>
+            <form onSubmit={this.handleSubmit}> <input
+                type='text'
+                name='query'
+                value={this.state.formData.query}
+                onChange={this.handleChange}          
+            /> <button type='submit'>Submit</button> </form>
+            {this.state.articles.length ?
+            <>
+                {this.state.articles.map(article => 
+                <p>{article.headline}</p>
+                
+                )} </>
+                :
+                <h3>Search the News!</h3>
+                }
             </>
          );
     }
