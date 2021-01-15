@@ -5,7 +5,12 @@ import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import authService from "../../services/authService";
 import Users from '../Users/Users'
+import ArticleSearch from '../ArticleSearch/ArticleSearch'
+import ArticleShowPage from '../ArticleShowPage/ArticleShowPage'
+import LandingPage from '../LandingPage/LandingPage'
+import PersonalProfilePage from '../PersonalProfilePage/PersonalProfilePage'
 import "./App.css";
+import UserProfilePage from "../UserProfilePage/UserProfilePage";
 
 class App extends Component {
   state = {
@@ -63,14 +68,52 @@ class App extends Component {
             user ? <Users /> : <Redirect to="/login" />
           }
         />
-
-        {/* Route for ArticleSearchPage */}
-
-        {/* Route for Personal Profile */}
-
-          {/* Route for Article Show Page */}
-
-
+        <Route
+          exact path="/articles"
+          render={() =>
+            user ? <ArticleSearch 
+              user = {this.state.user}
+            /> 
+            : 
+            <Redirect to="/login" />
+          }
+        />
+        <Route
+          exact path="/profile/article"
+          render={() => 
+            user ? <ArticleShowPage 
+              user = {this.state.user}
+          /> 
+          : 
+          <Redirect to="/login" />
+          }
+        />
+        <Route
+          exact path="/"
+          render={() => 
+            <LandingPage />
+          }
+        />
+        <Route
+          exact path="/profile"
+          render={() => 
+            user ? <PersonalProfilePage 
+            user = {this.state.user}
+        /> 
+          : 
+          <Redirect to="/login" />
+          }
+        />
+        <Route
+          exact path="/users/show"
+          render={() =>
+            user ? <UserProfilePage 
+            user = {this.state.user}
+        /> 
+          : 
+          <Redirect to="/login" />
+          }
+        />
       </>
     );
   }

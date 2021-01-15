@@ -1,3 +1,21 @@
+import React, { Component } from 'react';
+import './ArticleShowPage.css'
+
+class ArticleShowPage extends Component {
+    state = {  }
+    render() { 
+        return ( 
+            <>
+                <h1>Article Show</h1>
+            </>
+         );
+    }
+}
+ 
+export default ArticleShowPage;
+
+
+
 // class component to hold state for comment formData
 
 

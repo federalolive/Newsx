@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import "./UserProfilePage.css"
+import "./LandingPage.css";
 
-class UserProfilePage extends Component {
+class LandingPage extends Component {
     state = {  }
     render() { 
         return ( 
             <>
-                <h1>User Profile Page</h1>
+                <h1>Landing Page</h1>
             </>
          );
     }
 }
  
-export default UserProfilePage;
+export default LandingPage;

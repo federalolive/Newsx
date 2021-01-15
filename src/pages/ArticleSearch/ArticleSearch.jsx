@@ -1,3 +1,21 @@
+import React, { Component } from 'react';
+import './ArticleSearch.css'
+
+class ArticleSearch extends Component {
+    state = {  }
+    render() { 
+        return ( 
+            <>
+            <h1>Article Search Page</h1>
+            </>
+         );
+    }
+}
+ 
+export default ArticleSearch;
+
+
+
 // we need to render search form, that includes our query information, which on submit gets sent to the back end to handle our API call
 
 // class component: because our state is going to be our form data that we are submitting

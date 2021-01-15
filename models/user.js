@@ -4,11 +4,11 @@ const Schema = mongoose.Schema
 
 const SALT_ROUNDS = 6;
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
   name: String,
   email: {type: String, required: true, lowercase: true, unique: true},
   password: String,
-  avatar: {Type: String},
+  avatar: String,
   bio: String,
   articleCollection: [{type: Schema.Types.ObjectId, ref: 'Article'}]
 }, {
