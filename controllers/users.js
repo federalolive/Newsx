@@ -15,6 +15,6 @@ function populateUserCollection(req, res){
   .populate('articleCollection')
   .then((user)=>{
     console.log(user.articleCollection)
-      res.json(user)
+      res.json(user.articleCollection)
     })
 }

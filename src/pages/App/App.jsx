@@ -23,7 +23,7 @@ class App extends Component {
 
   async componentDidMount(){
     const userArticleCollection = await userService.getArticleCollection()
-    this.setState({userArticleCollection: userArticleCollection.articleCollection})
+    this.setState({userArticleCollection: userArticleCollection})
     console.log(userArticleCollection)
   }
 
