@@ -12,6 +12,7 @@ import PersonalProfilePage from '../PersonalProfilePage/PersonalProfilePage'
 import "./App.css";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
 import * as userService from '../../services/userService'
+import * as articleAPI from '../../services/article-api'
 
 class App extends Component {
   state = {
@@ -25,6 +26,14 @@ class App extends Component {
     this.setState({userArticleCollection: userArticleCollection.articleCollection})
     console.log(userArticleCollection)
   }
+
+   handleAddBookmark = async (formData) => {
+        console.log(formData)
+        const newArticle = await articleAPI.create(formData)
+        this.setState(state => ({ 
+          userArticleCollection: [...state.userArticleCollection, newArticle]
+        }))
+    }
   
   handleLogout = () => {
     authService.logout();
@@ -84,6 +93,7 @@ class App extends Component {
               user = {this.state.user}
               location={location}
               history={history}
+              handleAddBookmark={this.handleAddBookmark}
             /> 
             : 
             <Redirect to="/login" />

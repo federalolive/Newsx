@@ -23,7 +23,7 @@ const articleSchema = new Schema ({
     content: {type: String, default: 'Not Listed, See Source Link'},
     sourceName: {type: String, default: 'Not Listed, See Source Link'},
     comments: [commentSchema],
-    publishedAt: {type: Date, default: '0000-00-00T00:00:00Z'}
+    publishedAt: {type: Date}
 })
 
 module.exports = mongoose.model('Article', articleSchema)

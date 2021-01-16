@@ -1,15 +1,33 @@
-const Article = require('../models/article')
 const axios = require('axios')
+const Article = require('../models/article')
+const User = require('../models/user')
 
 module.exports = {
     // slated functions]
     search,
+    create,
 
 }
 
 async function search(req, res){
     await axios.get(`https://newsapi.org/v2/everything?q=${req.params.id}&apiKey=${process.env.API_KEY}&pageSize=25`)
     .then(articles => res.json(articles.data))
+}
+
+function create(req, res){
+    console.log('this is the controller function')
+    Article.create(req.body)
+    .then((article)=>{
+        User.findById(req.user._id)
+        .then((user)=>{
+            user.articleCollection.push(article._id)
+            user.save()
+            console.log(user)
+        })
+    })
+    .then((article)=>{
+        res.json(article)
+    })
 }
 
 

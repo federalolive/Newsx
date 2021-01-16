@@ -3,30 +3,22 @@ import React, { Component } from 'react';
 class APIArticleCard extends Component {
     state = { 
         formData: {
-            title: '',
-            sourceName: '',
-            author: '',
-            description: '',
-            url: '',
-            urlToImage: '',
-            publishedAt: '',
-            content: ''
+            title: this.props.article.title,
+            sourceName: this.props.article.source.name,
+            author: this.props.article.title,
+            description: this.props.article.description,
+            url: this.props.article.url,
+            urlToImage: this.props.article.urlToImage,
+            publishedAt: this.props.article.publishedAt,
+            content: this.props.article.content
         }   
      }
 
-    handleSubmit = e => {
-         const formData = {...this.state.formData, [e.target.name]: e.target.defaultValue}
-        this.setState({formData: formData})
-        console.log(formData)
-        // this.handleBookmark(this.state.formData)
-    }
+     handleSubmit = e => {
+		e.preventDefault();
+		this.props.handleAddBookmark(this.state.formData);
+		};
 
-    // handleBookmark = async (newBookmarkData) => }
-    // const
-
-    // handleChange = e => {
-        
-    // }
     render() { 
         const article = this.props.article
         return ( 
@@ -43,6 +35,7 @@ class APIArticleCard extends Component {
            <div>
                <p>Synopsis: {article.description}</p>
            </div>
+           <button onClick={this.handleSubmit}>Add Bookmark</button>
            {/* {if(props.user.articleCollection.includes(props.article.title)) ? 
            <h6>You Already Bookmarked This Piece!</h6>
            :
@@ -51,7 +44,7 @@ class APIArticleCard extends Component {
            </form>
             } */}
 
-            <form onSubmit={this.handleSubmit}>
+            {/* <form onSubmit={this.handleSubmit}>
                 <input 
                     name='title'
                     hidden
@@ -103,7 +96,7 @@ class APIArticleCard extends Component {
                 <button type="submit">
                     Bookmark
                 </button>
-            </form>
+            </form> */}
        </div>
          );
     }
