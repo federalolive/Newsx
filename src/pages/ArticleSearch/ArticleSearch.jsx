@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import './ArticleSearch.css'
 import * as articleAPI from '../../services/article-api'
+import APIArticleCard from '../../components/APIArticleCard/APIArticleCard'
 
 class ArticleSearch extends Component {
     state = { 
         articles: [],
         formData: {
             query: '',   
-        }       
+        }    
      }
+
      handleSubmit = (e) => { 
          // prevents user from triggering an autmatic refresh of the page and api call before they finish typing and submitting their query
          e.preventDefault()
@@ -17,6 +19,7 @@ class ArticleSearch extends Component {
      handleChange= (e) => {
          // handle change is resetting for formData in state with the input from the user, which will then be passed into our handleArticleSearch function above
         const formData = {...this.state.formData, [e.target.name]: e.target.value}
+        // formData is NOT resetting after search?? ASK/FIX THIS
         this.setState({formData:formData})
 
      }
@@ -25,9 +28,9 @@ class ArticleSearch extends Component {
         const articles = await articleAPI.articleSearch(formData)
         console.log(articles.articles)
         this.setState({articles: articles.articles})
-
      }
-    render() { 
+    render() {
+        const user = this.props.user
         return ( 
             <>
             <h1>Article Search Page</h1>
@@ -40,7 +43,11 @@ class ArticleSearch extends Component {
             {this.state.articles.length ?
             <>
                 {this.state.articles.map(article => 
-                <p>{article.headline}</p>
+                <APIArticleCard 
+                    article={article}
+                    user={user}
+                    key={article.url}
+                />
                 
                 )} </>
                 :

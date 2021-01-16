@@ -15,15 +15,15 @@ const commentSchema = new Schema ({
 })
 
 const articleSchema = new Schema ({
-    headline: String,
-    articleImage: String,
-    description: {Type: String, default: 'None Provided'},
-    articleUrl: String,
-    author: {Type: String, default: 'Not Listed, See Source Link'},
-    content: {Type: String, default: 'Not Listed, See Source Link'},
-    organizationName: {Type: String, default: 'Not Listed, See Source Link'},
+    title: String,
+    urlToImage: String,
+    description: {type: String, default: "None Provided"},
+    url: String,
+    author: {type: String, default: 'Not Listed, See Source Link'},
+    content: {type: String, default: 'Not Listed, See Source Link'},
+    sourceName: {type: String, default: 'Not Listed, See Source Link'},
     comments: [commentSchema],
-    datePublished: {Type: Date, default: '0000-00-00T00:00:00Z'}
+    publishedAt: {type: Date, default: '0000-00-00T00:00:00Z'}
 })
 
 module.exports = mongoose.model('Article', articleSchema)
