@@ -47,6 +47,7 @@ class ArticleSearch extends Component {
                     article={article}
                     user={user}
                     key={article.url}
+                    handleAddBookmark={this.props.handleAddBookmark}
                 />
                 
                 )} </>
