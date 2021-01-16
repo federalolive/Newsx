@@ -1,8 +1,17 @@
 const Article = require('../models/article')
+const axios = require('axios')
 
 module.exports = {
-    // slated functions
+    // slated functions]
+    search,
+
 }
+
+async function search(req, res){
+    await axios.get(`https://newsapi.org/v2/everything?q=${req.params.id}&apiKey=${process.env.API_KEY}&pageSize=25`)
+    .then(articles => res.json(articles.data))
+}
+
 
 
 // have a function here that deals with the axios,get function, which take sthe form query and uses tempalte literals to append into our api url which will passed through 
@@ -19,7 +28,7 @@ module.exports = {
 
 
 // seraching entire API with q as query parameters, can include spaces, seraches the title as well as the content
-// https://newsapi.org/v2/everything?q=2021 election unrest usa&apiKey={APIKEY}&pageSize=20
+// https://newsapi.org/v2/everything?q=2021 election unrest usa&apiKey={APIKEY}&pageSize=25
 
 // can add relevancy, popularity, publishedAt to api call to set sort order of results
 

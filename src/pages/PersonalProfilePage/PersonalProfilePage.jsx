@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import './PersonalProfilePage.css'
 
 class PersonalProfilePage extends Component {
-    state = {  }
+    state = { 
+     }
+
     render() { 
         return ( 
             <>
