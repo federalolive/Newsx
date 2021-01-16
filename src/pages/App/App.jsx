@@ -11,12 +11,21 @@ import LandingPage from '../LandingPage/LandingPage'
 import PersonalProfilePage from '../PersonalProfilePage/PersonalProfilePage'
 import "./App.css";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
+import * as userService from '../../services/userService'
 
 class App extends Component {
   state = {
     user: authService.getUser(),
+    userArticleCollection: []
   };
 
+
+  async componentDidMount(){
+    const userArticleCollection = await userService.getArticleCollection()
+    this.setState({userArticleCollection: userArticleCollection.articleCollection})
+    console.log(userArticleCollection)
+  }
+  
   handleLogout = () => {
     authService.logout();
     this.setState({ user: null });
@@ -69,10 +78,12 @@ class App extends Component {
           }
         />
         <Route
-          exact path="/articles"
-          render={() =>
+          exact path="/articles/search"
+          render={({location, history}) =>
             user ? <ArticleSearch 
               user = {this.state.user}
+              location={location}
+              history={history}
             /> 
             : 
             <Redirect to="/login" />

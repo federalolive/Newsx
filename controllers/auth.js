@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken")
 module.exports = {
   signup,
   login,
+  populateUserCollection,
 };
 
 async function signup(req, res) {
@@ -33,6 +34,14 @@ async function login(req, res) {
   } catch (err) {
     return res.status(400).json(err);
   }
+}
+
+function populateUserCollection(req, res){
+  User.findById(req.user._id)
+  .populate('articleCollection')
+  .then((user)=>{
+      res.json(user)
+  })
 }
 
 /*----- Helper Functions -----*/
