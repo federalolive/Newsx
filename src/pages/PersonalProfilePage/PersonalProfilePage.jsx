@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
+import ArticleCard from '../../components/ArticleCard/ArticleCard'
+import { getArticleCollection } from '../../services/userService';
 import './PersonalProfilePage.css'
 
 class PersonalProfilePage extends Component {
-    state = { 
-     }
-
     render() { 
+        // const user = this.props.user
+        const userArticleCollection = this.props.userArticleCollection
         return ( 
             <>
-                <h1>Personal Profile</h1>
+            <h4>Bookmarks:</h4>
+            {userArticleCollection.map((article) => 
+                <ArticleCard 
+                    article = { article }
+                />
+            )}
             </>
-         );
+        )
     }
 }
  

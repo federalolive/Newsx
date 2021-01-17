@@ -5,7 +5,7 @@ class APIArticleCard extends Component {
         formData: {
             title: this.props.article.title,
             sourceName: this.props.article.source.name,
-            author: this.props.article.title,
+            author: this.props.article.author,
             description: this.props.article.description,
             url: this.props.article.url,
             urlToImage: this.props.article.urlToImage,
