@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class ArticleCard extends Component {
     state = { 
@@ -10,10 +11,13 @@ class ArticleCard extends Component {
             <>
             <img src={article.urlToImage} alt="article-header"/>
             <h1>{article.title}</h1>
-            <p>{article.author}</p>
-            <p>{article.publishedAt}</p>
-            <p>{article.sourceName}</p>
-            <p>{article.description}</p>
+    
+            <Link to={{
+                pathname: '/profile/article', 
+                state: { article }
+            }} > 
+            Read Article
+            </Link>
             </>
             // <button type="delete">Remove from Collection</button>
          );

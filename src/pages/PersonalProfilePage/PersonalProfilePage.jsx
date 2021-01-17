@@ -5,10 +5,16 @@ import './PersonalProfilePage.css'
 
 class PersonalProfilePage extends Component {
     render() { 
-        // const user = this.props.user
+        const user = this.props.user
         const userArticleCollection = this.props.userArticleCollection
         return ( 
             <>
+             <h4>Your Bio:</h4> {user.bio ? 
+                <h5>{user.bio}</h5>
+                :
+                <h5>Tell us and other users a bit about yourself, share a social handle, or leave us with a favorite quote!</h5>
+            }
+
             <h4>Bookmarks:</h4>
             {userArticleCollection.map((article) => 
                 <ArticleCard 
