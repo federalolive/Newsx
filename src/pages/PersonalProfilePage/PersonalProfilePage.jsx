@@ -14,13 +14,14 @@ class PersonalProfilePage extends Component {
                 :
                 <h5>Tell us and other users a bit about yourself, share a social handle, or leave us with a favorite quote!</h5>
             }
-
+            <hr />
             <h4>Bookmarks:</h4>
             {userArticleCollection.map((article) => 
                 <ArticleCard 
-                    article = { article }
+                article = { article }
                 />
-            )}
+                
+                )}
             </>
         )
     }

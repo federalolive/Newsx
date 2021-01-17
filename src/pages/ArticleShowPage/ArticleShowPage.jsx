@@ -9,6 +9,8 @@ class ArticleShowPage extends Component {
         console.log(article)
         return ( 
             <>
+                <div>
+                    
                 <h1>{article.title}</h1>
                 <img src={article.urlToImage} alt="article-header"/>
                 <p>{article.author}</p>
@@ -19,6 +21,7 @@ class ArticleShowPage extends Component {
                     pathname: '/profile'
                 }}> Return
                 </Link>
+                </div>
             </>
          );
     }

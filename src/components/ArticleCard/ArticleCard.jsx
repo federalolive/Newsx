@@ -16,9 +16,12 @@ class ArticleCard extends Component {
                 pathname: '/profile/article', 
                 state: { article }
             }} > 
-            Read Article
+            <h3>Read Article</h3>
             </Link>
+            <hr />
+
             </>
+            
             // <button type="delete">Remove from Collection</button>
          );
     }
