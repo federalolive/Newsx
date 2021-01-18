@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ArticleCard from '../../components/ArticleCard/ArticleCard'
-import { getArticleCollection } from '../../services/userService';
 import './PersonalProfilePage.css'
+
 
 class PersonalProfilePage extends Component {
     render() { 
