@@ -24,7 +24,7 @@ function removeArticleFromCollection(req, res){
   User.findById(req.user._id)
   .then((user)=>{
     // user.articleCollection = user.articleCollection.filter(article => article._id !== req.params.id)
-    let idx = user.articleCollection.findIndex((a)=>a._id === req.params.id)
+    let idx = user.articleCollection.findIndex((a)=>a._id == req.params.id)
     user.articleCollection.splice(idx, 1)
     user.save()
     console.log(user)
