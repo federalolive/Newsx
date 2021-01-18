@@ -120,7 +120,9 @@ class App extends Component {
         <Route
           exact path="/"
           render={() => 
-            <LandingPage />
+            <LandingPage
+            handleAddBookmark={this.handleAddBookmark}
+            />
           }
         />
         <Route
