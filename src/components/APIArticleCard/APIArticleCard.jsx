@@ -35,68 +35,16 @@ class APIArticleCard extends Component {
            <div>
                <p>Synopsis: {article.description}</p>
            </div>
-           <button onClick={this.handleSubmit}>Add Bookmark</button>
-           {/* {if(props.user.articleCollection.includes(props.article.title)) ? 
-           <h6>You Already Bookmarked This Piece!</h6>
-           :
-           <form onSubmit>
-               <button type="submit">Boomark Article</button>
-           </form>
-            } */}
-
-            {/* <form onSubmit={this.handleSubmit}>
-                <input 
-                    name='title'
-                    hidden
-                    defaultValue={article.title}
-                    type="text"
-                />
-                <input 
-                    name='sourceName'
-                    hidden
-                    defaultValue={article.source.name}
-                    type="text"
-                />
-                <input 
-                    name='author'
-                    hidden
-                    defaultValue={article.author}
-                    type="text"
-                />
-                <input 
-                    name='description'
-                    hidden
-                    defaultValue={article.description}
-                    type="text"
-                />
-                <input 
-                    name='url'
-                    hidden
-                    defaultValue={article.url}
-                    type="text"
-                />
-                <input 
-                    name='urlToImage'
-                    hidden
-                    defaultValue={article.urlToImage}
-                    type="text"
-                />
-                <input 
-                    name='publishedAt'
-                    hidden
-                    defaultValue={article.publishedAt}
-                    type="text"
-                />
-                <input 
-                    name='content'
-                    hidden
-                    defaultValue={article.content}
-                    type="text"
-                />
-                <button type="submit">
-                    Bookmark
-                </button>
-            </form> */}
+           {this.props.userArticleCollection.includes(article) ?
+                <h1>You already bookmarked this!</h1> 
+                : <button onClick={this.handleSubmit}>Add Bookmark</button>         
+            }
+           {/* {this.props.userArticleCollection.map(userArticle=>
+            userArticle === article) ? 
+            <h1>You already bookmarked this!</h1> 
+            : <button onClick={this.handleSubmit}>Add Bookmark</button> 
+        }  */}
+          
        </div>
          );
     }
