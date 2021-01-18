@@ -121,7 +121,7 @@ class App extends Component {
           render={() => 
             user ? <PersonalProfilePage 
             user = {this.state.user}
-            userArticleCollection = {this.state.userArticleCollection}
+            userArticleCollection={this.state.userArticleCollection}
         /> 
           : 
           <Redirect to="/login" />
