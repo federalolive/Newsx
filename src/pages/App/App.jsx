@@ -32,7 +32,7 @@ class App extends Component {
         const newArticle = await articleAPI.create(formData)
         this.setState(state => ({ 
           userArticleCollection: [...state.userArticleCollection, newArticle]
-        }))
+        }), ()=> this.props.history.push('/articles/search'))
     }
   
   handleLogout = () => {
@@ -51,16 +51,6 @@ class App extends Component {
       userArticleCollection: this.state.userArticleCollection.filter(article=> article._id !== id)
     }), ()=> this.props.history.push('/profile'))
   }
-
-  // handleDeleteArticle = async id => {
-  //   const userArticleCollection = await userService.deleteOne(id)
-  //   this.setState({userArticleCollection: userArticleCollection})
-  // }
-
-  // handleDeleteArticle = async id => {
-  //   await userService.removeArticleFromCollection(this.state.userArticleCollection)
-  //   this.setState({userArticleCollection: this.state.userArticleCollection.filter(article => article._id !== id)})
-  // }
 
   render() {
     const { user } = this.state
