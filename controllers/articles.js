@@ -15,18 +15,31 @@ async function search(req, res){
 }
 
 function create(req, res){
-    console.log('this is the controller function')
-    Article.create(req.body)
+    Article.findOne({title: req.body.title})
     .then((article)=>{
-        User.findById(req.user._id)
-        .then((user)=>{
-            user.articleCollection.push(article._id)
-            user.save()
-            console.log(user)
-        })
+        if(article){
+            User.findById(req.user._id)
+            .then((user)=>{
+                user.articleCollection.push(article._id)
+                user.save()
+            })
+        } else {
+            Article.create(req.body)
+                .then((article)=>{
+                    User.findById(req.user._id)
+                        .then((user)=>{
+                            user.articleCollection.push(article._id)
+                            user.save()
+                            console.log(user)
+                        })
+                })
+        }
     })
     .then((article)=>{
         res.json(article)
+    })
+    .catch((err)=>{
+        console.log(err)
     })
 }
 
