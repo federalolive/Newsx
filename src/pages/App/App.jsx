@@ -45,6 +45,23 @@ class App extends Component {
     this.setState({ user: authService.getUser() });
   };
 
+  handleDeleteArticle = async id =>{
+    await userService.removeArticleFromCollection(id)
+    this.setState(state=>({
+      userArticleCollection: this.state.userArticleCollection.filter(article=> article._id !== id)
+    }), ()=> this.props.history.push('/profile'))
+  }
+
+  // handleDeleteArticle = async id => {
+  //   const userArticleCollection = await userService.deleteOne(id)
+  //   this.setState({userArticleCollection: userArticleCollection})
+  // }
+
+  // handleDeleteArticle = async id => {
+  //   await userService.removeArticleFromCollection(this.state.userArticleCollection)
+  //   this.setState({userArticleCollection: this.state.userArticleCollection.filter(article => article._id !== id)})
+  // }
+
   render() {
     const { user } = this.state
     return (
@@ -122,6 +139,7 @@ class App extends Component {
             user ? <PersonalProfilePage 
             user = {this.state.user}
             userArticleCollection={this.state.userArticleCollection}
+            handleDeleteArticle={this.handleDeleteArticle}
         /> 
           : 
           <Redirect to="/login" />
