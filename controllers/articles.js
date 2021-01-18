@@ -15,7 +15,7 @@ async function search(req, res){
 }
 
 function create(req, res){
-    Article.findOne({title: req.body.title})
+    Article.findOne({url: req.body.url})
     .then((article)=>{
         if(article){
             User.findById(req.user._id)
