@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './ArticleShowPage.css'
 
 class ArticleShowPage extends Component {
     state = {  }
     render() { 
+        const article = this.props.location.state.article
+        console.log(article)
         return ( 
             <>
-                <h1>Article Show</h1>
+                <div>
+                    
+                <h1>{article.title}</h1>
+                <img src={article.urlToImage} alt="article-header"/>
+                <p>{article.author}</p>
+                <p>{article.publishedAt}</p>
+                <p>{article.sourceName}</p>
+                <p>{article.content} For the full article, click <a href={article.url} target="_blank" rel="noreferrer">here</a>.</p>
+                <Link to={{
+                    pathname: '/profile'
+                }}> Return
+                </Link>
+                </div>
             </>
          );
     }

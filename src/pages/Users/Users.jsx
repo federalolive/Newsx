@@ -14,15 +14,15 @@ class Users extends Component {
 
   render() {
     return (
-      <>
-        <h1>Hello. This is a list of all the users.</h1>
+      <div>
+        <h1>User List</h1>
         {this.state.users.map((user) => (
         <UserCard 
           user={user}
           key={user._id}
         />
         ))}
-      </>
+      </div>
     );
   }
 }

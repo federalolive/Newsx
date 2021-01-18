@@ -40,8 +40,9 @@ class ArticleSearch extends Component {
                 value={this.state.formData.query}
                 onChange={this.handleChange}          
             /> <button type='submit'>Submit</button> </form>
+            
             {this.state.articles.length ?
-            <>
+            <div className="article-list">
                 {this.state.articles.map(article => 
                 <APIArticleCard 
                     article={article}
@@ -50,7 +51,7 @@ class ArticleSearch extends Component {
                     handleAddBookmark={this.props.handleAddBookmark}
                 />
                 
-                )} </>
+                )} </div>
                 :
                 <h3>Search the News!</h3>
                 }

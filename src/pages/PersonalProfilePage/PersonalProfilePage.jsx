@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
+import ArticleCard from '../../components/ArticleCard/ArticleCard'
+import { getArticleCollection } from '../../services/userService';
 import './PersonalProfilePage.css'
 
 class PersonalProfilePage extends Component {
-    state = { 
-     }
-
     render() { 
+        const user = this.props.user
+        const userArticleCollection = this.props.userArticleCollection
         return ( 
             <>
-                <h1>Personal Profile</h1>
+             <h4>Your Bio:</h4> {user.bio ? 
+                <h5>{user.bio}</h5>
+                :
+                <h5>Tell us and other users a bit about yourself, share a social handle, or leave us with a favorite quote!</h5>
+            }
+            <hr />
+            <h4>Bookmarks:</h4>
+            {userArticleCollection.map((article) => 
+                <ArticleCard 
+                article = { article }
+                />
+                
+                )}
             </>
-         );
+        )
     }
 }
  
