@@ -6,6 +6,7 @@ module.exports = {
     // slated functions]
     search,
     create,
+    getTopNews,
 
 }
 
@@ -43,7 +44,13 @@ function create(req, res){
     })
 }
 
-
+async function getTopNews (req, res) {
+    console.log('this is the controller function')
+    await axios.get (`https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.API_KEY}&pageSize=5`) 
+    .then ((articles) => {
+        console.log(articles)
+        res.json(articles.data)})
+}
 
 // have a function here that deals with the axios,get function, which take sthe form query and uses tempalte literals to append into our api url which will passed through 
 

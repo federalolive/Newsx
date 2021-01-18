@@ -21,7 +21,14 @@ export function create(formData){
     .then(res => res.json())
 }
 
-
+export function getTopNews () {
+  console.log('this is the services folder')
+  return fetch (`${BASE_URL}topnews`, {
+          headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
+    }, {mode: 'cors'}
+  ) 
+  .then (res => res.json())
+}
 // api related calls and database calls will pass through here, hite routes, with api calls and db fetches happening in the controllers. 
 
 // search api call
