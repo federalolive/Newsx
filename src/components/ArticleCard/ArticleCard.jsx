@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom'
 
 class ArticleCard extends Component {
     state = { 
-        formData: {_id: this.props.article._id}
+        formData: {id: this.props.article._id}
      }
+
+    handleSubmit = e => {
+        e.preventDefault()
+        this.props.handleDeleteArticle(this.state.formData.id)
+    }
+
     render() { 
         const article = this.props.article
         return ( 
@@ -18,11 +24,10 @@ class ArticleCard extends Component {
             }} > 
             <h3>Read Article</h3>
             </Link>
+            <button onClick={this.handleSubmit}>Remove From Bookmarks</button>
             <hr />
 
             </>
-            
-            // <button type="delete">Remove from Collection</button>
          );
     }
 }
