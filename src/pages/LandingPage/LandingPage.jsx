@@ -25,6 +25,7 @@ class LandingPage extends Component {
                       article={article}
                       key={article.url}
                       handleAddBookmark={this.props.handleAddBookmark}
+                      userArticleCollection={this.props.userArticleCollection}
                       />
                       )} 
                 </div>

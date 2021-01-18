@@ -111,6 +111,7 @@ class App extends Component {
               location={location}
               history={history}
               handleAddBookmark={this.handleAddBookmark}
+              userArticleCollection={this.state.userArticleCollection}
             /> 
             : 
             <Redirect to="/login" />
@@ -132,6 +133,7 @@ class App extends Component {
           render={() => 
             <LandingPage
             handleAddBookmark={this.handleAddBookmark}
+            userArticleCollection={this.state.userArticleCollection}
             />
           }
         />
