@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import APIArticleCard from '../../components/APIArticleCard/APIArticleCard';
 import * as articleAPI from '../../services/article-api'
 import authService from '../../services/authService';
 import "./LandingPage.css";
@@ -18,6 +19,15 @@ class LandingPage extends Component {
         return ( 
             <>
                 <h1>Landing Page</h1>
+                <div>
+                    {this.state.topNews.map(article =>
+                      <APIArticleCard 
+                      article={article}
+                      key={article.url}
+                      handleAddBookmark={this.props.handleAddBookmark}
+                      />
+                      )} 
+                </div>
             </>
          );
     }
