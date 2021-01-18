@@ -52,6 +52,16 @@ class App extends Component {
     }), ()=> this.props.history.push('/profile'))
   }
 
+
+  handleDeleteArticle = async id =>{
+    await userService.removeArticleFromCollection(id)
+    let idx = this.state.userarticleCollection.findIndex((a)=>a._id === id)
+    const userArticleCollection = this.state.userarticleCollection.splice(idx, 1)
+    this.setState(state=>({
+      userArticleCollection: userArticleCollection
+    }), ()=> this.props.history.push('/profile'))
+  }
+
   render() {
     const { user } = this.state
     return (
