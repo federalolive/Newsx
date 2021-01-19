@@ -13,6 +13,7 @@ import "./App.css";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
 import * as userService from '../../services/userService'
 import * as articleAPI from '../../services/article-api'
+import EditProfilePage from "../EditProfilePage/EditProfilePage";
 
 class App extends Component {
   state = {
@@ -59,6 +60,16 @@ class App extends Component {
     const userArticleCollection = this.state.userarticleCollection.splice(idx, 1)
     this.setState(state=>({
       userArticleCollection: userArticleCollection
+    }), ()=> this.props.history.push('/profile'))
+  }
+
+  handleUpdateUser = async formData =>{
+    console.log('this is the handle update function')
+    console.log(formData)
+    const user = await userService.updateUserProfile(formData)
+    console.log(user)
+    this.setState(state =>({
+      user: user,
     }), ()=> this.props.history.push('/profile'))
   }
 
@@ -158,6 +169,18 @@ class App extends Component {
           : 
           <Redirect to="/login" />
           }
+        />
+        <Route 
+          exact path="/profile/edit"
+          render={({history, location})=>
+        user 
+        ? <EditProfilePage 
+          location={location}
+          user={user}
+          handleUpdateUser={this.handleUpdateUser}
+        /> 
+        : <Redirect to="/login" />
+      }
         />
       </>
     );

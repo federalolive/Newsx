@@ -21,6 +21,7 @@ class APIArticleCard extends Component {
 
     render() { 
         const article = this.props.article
+        const userArticleCollection = this.props.userArticleCollection
         return ( 
             <div>
            <div>
@@ -35,15 +36,25 @@ class APIArticleCard extends Component {
            <div>
                <p>Synopsis: {article.description}</p>
            </div>
-           {this.props.userArticleCollection.includes(article) ?
-                <h1>You already bookmarked this!</h1> 
-                : <button onClick={this.handleSubmit}>Add Bookmark</button>         
-            }
-           {/* {this.props.userArticleCollection.map(userArticle=>
-            userArticle === article) ? 
-            <h1>You already bookmarked this!</h1> 
-            : <button onClick={this.handleSubmit}>Add Bookmark</button> 
-        }  */}
+           <button onClick={this.handleSubmit}>Add Bookmark</button>
+
+           {/* {userArticleCollection.map((userArticle)=> (
+               userArticle.url === article.url 
+               ?
+               <button onClick={this.handleSubmit}>Add Bookmark</button>
+               
+               :
+               <p></p>
+           )
+           )} */}
+
+           {/* {
+           userArticleCollection.includes(article.url) 
+           ?
+           <h1>You have bookmarked this</h1>
+           :
+           <button onClick={this.handleSubmit}>Add Bookmark</button>
+        } */}
           
        </div>
          );
@@ -51,35 +62,3 @@ class APIArticleCard extends Component {
 }
  
 export default APIArticleCard;
-
-// const APIArticleCard = (props) => {
-//     return ( 
-//        <div>
-//            <div>
-//             <img src={props.article.urlToImage} height='200px' alt="article feature content"/>
-//            </div>
-//            <div>
-//                <h4>{props.article.title}</h4>
-//                <p>{props.article.author}</p>
-//                <p>Date Published: {props.article.publishedAt}</p>
-//                <p>Source: {props.article.source.name}</p>
-//            </div>
-//            <div>
-//                <p>Synopsis: {props.article.description}</p>
-//            </div>
-//            {/* {if(props.user.articleCollection.includes(props.article.title)) ? 
-//            <h6>You Already Bookmarked This Piece!</h6>
-//            :
-//            <form onSubmit>
-//                <button type="submit">Boomark Article</button>
-//            </form>
-//             } */}
-
-//             <form onSubmit={props.handleSubmitBookmark}>
-
-//             </form>
-//        </div>
-//      );
-// }
- 
-// export default APIArticleCard;
