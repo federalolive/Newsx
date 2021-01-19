@@ -43,3 +43,10 @@ export function updateUserProfile(formData){
 }, {mode: "cors"})
 .then(res => res.json());
 }
+
+export function getUser(){
+  return fetch(`${BASE_URL}updateprofile`, {
+    headers: {'Authorization': 'Bearer ' + tokenService.getToken()},
+}, {mode: "cors"})
+.then(res => res.json())
+}
