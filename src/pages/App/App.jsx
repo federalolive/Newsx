@@ -46,18 +46,18 @@ class App extends Component {
     this.setState({ user: authService.getUser() });
   };
 
-  handleDeleteArticle = async id =>{
-    await userService.removeArticleFromCollection(id)
-    this.setState(state=>({
-      userArticleCollection: this.state.userArticleCollection.filter(article=> article._id !== id)
-    }), ()=> this.props.history.push('/profile'))
-  }
+  // handleDeleteArticle = async id =>{
+  //   await userService.removeArticleFromCollection(id)
+  //   this.setState(state=>({
+  //     userArticleCollection: this.state.userArticleCollection.filter(article=> article._id !== id)
+  //   }), ()=> this.props.history.push('/profile'))
+  // }
 
 
   handleDeleteArticle = async id =>{
     await userService.removeArticleFromCollection(id)
-    let idx = this.state.userarticleCollection.findIndex((a)=>a._id === id)
-    const userArticleCollection = this.state.userarticleCollection.splice(idx, 1)
+    let idx = this.state.userArticleCollection.findIndex((a)=>a._id === id)
+    const userArticleCollection = this.state.userArticleCollection.splice(idx, 1)
     this.setState(state=>({
       userArticleCollection: userArticleCollection
     }), ()=> this.props.history.push('/profile'))
