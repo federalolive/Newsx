@@ -5,6 +5,7 @@ module.exports = {
   populateUserCollection,
   removeArticleFromCollection,
   updateProfile,
+  getUpdatedUser,
 };
 
 function index(req, res) {
@@ -45,20 +46,9 @@ function updateProfile(req, res){
   })
 }
 
-// function updateProfile(req, res){
-//   console.log('this is the update controller function')
-//   console.log(req.body)
-//   User.findById(req.user._id)
-//   .then((user)=>{
-//     console.log(user)
-//     console.log(user.bio)
-//     user.bio = req.body.bio
-//     user.avatar = req.body.avatar
-//     user.save()
-//   })
-//   .then((user)=>{
-      
-    
-//     res.json(user)
-//   })
-// }
+function getUpdatedUser(req, res){
+  User.findById(req.user._id)
+  .then((user)=>{
+    res.json(user)
+  })
+}
