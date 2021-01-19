@@ -9,6 +9,7 @@ const usersCtrl = require('../controllers/users');
 router.use(require("../config/auth"));
 router.get("/", checkAuth, usersCtrl.index);
 router.get('/popusercollection', checkAuth, usersCtrl.populateUserCollection)
+router.put('/update', checkAuth, usersCtrl.updateProfile)
 router.put('/removearticle/:id', checkAuth, usersCtrl.removeArticleFromCollection)
 
 
