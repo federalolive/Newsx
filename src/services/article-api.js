@@ -29,6 +29,22 @@ export function getTopNews () {
   ) 
   .then (res => res.json())
 }
+
+export function getArticle(articleId){
+  return fetch (`${BASE_URL}${articleId}`, {
+    headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
+}, {mode: 'cors'})
+.then((res => res.json()))
+}
+
+export function addComment(idandFormData){
+  return fetch (`${BASE_URL}${idandFormData.article._id}/addcomment`, {
+    method: "PUT",
+      headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
+        body: JSON.stringify(idandFormData)
+}, {mode: 'cors'})
+.then(res => res.json())
+}
 // api related calls and database calls will pass through here, hite routes, with api calls and db fetches happening in the controllers. 
 
 // search api call

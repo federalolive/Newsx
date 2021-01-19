@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import './ArticleShowPage.css'
+import * as articleAPI from '../../services/article-api'
+import CommentCard from '../../components/CommentCard/CommentCard'
 
 class ArticleShowPage extends Component {
     state = { 
         formData: {postedBy:this.props.user.name, postedByID:this.props.user._id, content:''},
-        comments: [],
+        article: [],
      }
+
+
+    async componentDidMount(){
+        const article = await articleAPI.getArticle(this.props.location.state.article._id)
+        this.setState({article: article})
+    } 
+    //  pass article id throughparams to find the article and create and push comment into its embedded array
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.handleAddComment(this.state.formData)
+        this.handleAddComment(this.state)
     }
 
     handleChange = e =>{
@@ -20,9 +29,16 @@ class ArticleShowPage extends Component {
         })
     }
 
+    handleAddComment = async (IdandFormData) =>{
+        const updatedArticle = await articleAPI.addComment(IdandFormData)
+        this.setState({
+            article: updatedArticle
+        })
+    }
+
     render() { 
-        const article = this.props.location.state.article
-        console.log(article)
+        const article = this.state.article
+        console.log(article.comments)
         return ( 
             <>
                 <div>
@@ -50,7 +66,19 @@ class ArticleShowPage extends Component {
                     />
                     <button type="submit">Add Comment</button>
                 </form>
+                <div>
 
+                    {article.comments ? article.comments.map((comment)=>
+                    <CommentCard 
+                        comment={comment}
+                        user={this.props.user.name}
+                    />
+                    )
+                    :
+                    <p>Loading Comments</p>
+                    }
+                
+                </div>
                 </div>
             </>
          );
