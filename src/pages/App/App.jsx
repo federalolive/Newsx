@@ -47,14 +47,6 @@ class App extends Component {
     this.setState({ user: authService.getUser() });
   };
 
-  // handleDeleteArticle = async id =>{
-  //   await userService.removeArticleFromCollection(id)
-  //   this.setState(state=>({
-  //     userArticleCollection: this.state.userArticleCollection.filter(article=> article._id !== id)
-  //   }), ()=> this.props.history.push('/profile'))
-  // }
-
-
   handleDeleteArticle = async id =>{
     await userService.removeArticleFromCollection(id)
     let idx = this.state.userArticleCollection.findIndex((a)=>a._id === id)
@@ -123,7 +115,6 @@ class App extends Component {
               location={location}
               history={history}
               handleAddBookmark={this.handleAddBookmark}
-              userArticleCollection={this.state.userArticleCollection}
             /> 
             : 
             <Redirect to="/login" />
@@ -145,7 +136,6 @@ class App extends Component {
           render={() => 
             <LandingPage
             handleAddBookmark={this.handleAddBookmark}
-            userArticleCollection={this.state.userArticleCollection}
             />
           }
         />
