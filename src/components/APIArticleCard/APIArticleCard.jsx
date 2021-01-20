@@ -21,7 +21,6 @@ class APIArticleCard extends Component {
 
     render() { 
         const article = this.props.article
-        const userArticleCollection = this.props.userArticleCollection
         return ( 
             <div>
            <div>
@@ -36,18 +35,7 @@ class APIArticleCard extends Component {
            <div>
                <p>Synopsis: {article.description}</p>
            </div>
-           <button onClick={this.handleSubmit}>Add Bookmark</button>
-
-           {/* {userArticleCollection.map((userArticle)=> (
-               userArticle.url === article.url 
-               ?
-               <button onClick={this.handleSubmit}>Add Bookmark</button>
-               
-               :
-               <p></p>
-           )
-           )} */}
-          
+           <button onClick={this.handleSubmit}>Add Bookmark</button>  
        </div>
          );
     }
