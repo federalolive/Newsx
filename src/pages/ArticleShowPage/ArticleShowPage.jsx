@@ -72,6 +72,7 @@ class ArticleShowPage extends Component {
                     <CommentCard 
                         comment={comment}
                         user={this.props.user.name}
+                        key={comment._id}
                     />
                     )
                     :

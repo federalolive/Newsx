@@ -5,24 +5,24 @@ import {Link} from 'react-router-dom'
 
 class CommentCard extends Component {
     state = { 
-        formData: {postedBy:this.props.user.name, postedById:this.props.user._id, content:''},
+        formData: {postedBy:this.props.user.name, postedByID:this.props.user._id, content:''},
         replies: [],
 
      }
 
      render (){
          const comment = this.props.comment
-         const user = this.props.user
+         const commenterId = comment.postedByID
          return(
          <>
             <p>{comment.content}</p>
             <p>{comment.postedBy}</p>
-            {/* <Link
+            <Link
                 to={{
-                    pathname: '/users/show',
-                    state: {user}
+                    pathname: '/profile/article/commenter',
+                    state: {commenterId}
                 }}
-            >{comment.postedBy}</Link> */}
+            >{comment.postedBy}</Link>
          </>
          )
         }

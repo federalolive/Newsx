@@ -14,6 +14,7 @@ import UserProfilePage from "../UserProfilePage/UserProfilePage";
 import * as userService from '../../services/userService'
 import * as articleAPI from '../../services/article-api'
 import EditProfilePage from "../EditProfilePage/EditProfilePage";
+import CommentLinkedUserProfilePage from "../CommentLinkedUserProfilePage/CommentLinkedUserProfilePage";
 
 class App extends Component {
   state = {
@@ -181,6 +182,17 @@ class App extends Component {
         /> 
         : <Redirect to="/login" />
       }
+        />
+        <Route
+          exact path="/profile/article/commenter"
+          render={({location}) =>
+            user ? 
+            <CommentLinkedUserProfilePage 
+              location={location}
+            /> 
+          : 
+          <Redirect to="/login" />
+          }
         />
       </>
     );
