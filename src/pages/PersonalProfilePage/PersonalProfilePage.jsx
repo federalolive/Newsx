@@ -8,30 +8,12 @@ import * as userService from '../../services/userService'
 class PersonalProfilePage extends Component {
     state = {
         user: [],
-        // invalidForm: false,
-        // formData: this.props.user
     }
 
     async componentDidMount(){
         const user = await userService.getUser()
         this.setState({user: user})
     }
-
-    // formRef = React.createRef()
-
-    // handleSubmit = e => {
-    //     e.preventDefault()
-    //     this.props.handleUpdateUser(this.state.formData)
-    // }
-
-    // handleChange = e => {
-    //     const formData = {...this.state.formData, [e.target.name]: e.target.value}
-    //     this.setState({
-    //         formData: formData,
-    //         invalidForm: !this.formRef.current.checkValidity()
-    //     })
-    // }
-
 
     render() { 
         const user = this.state.user
@@ -56,41 +38,6 @@ class PersonalProfilePage extends Component {
                 />
                 
                 )}
-                <div>
-                {/* <form ref={this.formRef} onSubmit={this.handleSubmit}>
-                <div>
-                    <input 
-                        type="text"
-                        name="avatar"
-                        value={this.state.formData.avatar}
-                        onChange={this.handleChange}
-                    />
-                    <label htmlFor="">Profile Image Url</label>
-                </div>
-                <div>
-                    <input 
-                        type="text"
-                        name="bio"
-                        value={this.state.formData.bio}
-                        onChange={this.handleChange}
-                    />
-                    <label htmlFor="">Personal Bio</label>
-                </div>
-                <div>
-                    <button 
-                        type="submit"
-                        disabled={this.state.invalidForm}
-                    >Update Profile</button>
-                    <Link
-                        to={{
-                            pathname: '/profile'
-                        }}
-                    >
-                            Cancel
-                    </Link>
-                </div>
-            </form> */}
-                </div>
             </>
         )
     }
