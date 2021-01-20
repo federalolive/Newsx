@@ -25,8 +25,6 @@ class ArticleCard extends Component {
             <h3>Read Article</h3>
             </Link>
             <button onClick={this.handleSubmit}>Remove From Bookmarks</button>
-            <hr />
-
             </>
          );
     }

@@ -45,8 +45,3 @@ export function addComment(idandFormData){
 }, {mode: 'cors'})
 .then(res => res.json())
 }
-// api related calls and database calls will pass through here, hite routes, with api calls and db fetches happening in the controllers. 
-
-// search api call
-
-// create function call to teh backend

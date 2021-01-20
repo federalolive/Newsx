@@ -35,7 +35,13 @@ class APIArticleCard extends Component {
            <div>
                <p>Synopsis: {article.description}</p>
            </div>
+           {this.props.user 
+           ? 
            <button onClick={this.handleSubmit}>Add Bookmark</button>  
+           :
+           <p></p>
+            }
+           
        </div>
          );
     }

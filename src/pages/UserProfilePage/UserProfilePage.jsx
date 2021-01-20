@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "./UserProfilePage.css"
 
 
 const UserProfilePage = (props) => {
-    console.log(props)
     const user = props.location.state.user
     return ( 
         <>
