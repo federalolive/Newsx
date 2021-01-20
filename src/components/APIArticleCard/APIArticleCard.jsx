@@ -30,25 +30,25 @@ class APIArticleCard extends Component {
                 <div class="card">
                     <div class="card-image">
                         <img src={article.urlToImage} height='200px' alt="article feature content"/>
-                    </div>
-                    <div>
                         <span class="card-title">{article.title}</span>
-                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                     </div>
+
                     <div class="card-content">
                         <p>{article.author}</p>
                         <p>Date Published: {article.publishedAt}</p>
                         <p>Source: {article.source.name}</p>
                     </div>
+
                     <div>
                         <p>Synopsis: {article.description}</p>
                     </div>
-                    <button class="card-action" onClick={this.handleSubmit}>Add Bookmark</button>
-                    </div>
-                    </div>
+                       
+                    <button class="btn-floating halfway-fab waves-effect waves-light red"  onClick={this.handleSubmit}> <i class="material-icons">add</i></button>
                 </div>
-            </div>
-        </div> 
+                </div>
+                </div>
+                </div>
+        </div>
         );
     }
 }

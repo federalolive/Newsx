@@ -17,20 +17,33 @@ class ArticleCard extends Component {
         const article = this.props.article
         return ( 
             <>
-         
+            <div>
+=            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">  
+                            <img src={article.urlToImage} alt="article-header"/>
+                            <span class="card-title">{article.title}</span>
+                        </div>
+                      
+                        <div class="card-content">
+                        <p>{article.title}</p>
+                         
+                        </div>
+                        <div class="card-action">
+                            <Link to={{
+                             pathname: '/profile/article', 
+                             state: { article }
+                            }}> Read Article                        
+                            </Link>
+                        </div>
 
-            <img src={article.urlToImage} alt="article-header"/>
-            <h1>{article.title}</h1>
-    
-            <Link to={{
-                pathname: '/profile/article', 
-                state: { article }
-            }} > 
-            <h3>Read Article</h3>
-            </Link>
-            <button onClick={this.handleSubmit}>Remove From Bookmarks</button>
-            <hr />
 
+                        <div class="card-action" onClick={this.handleSubmit}>Remove From Bookmarks</div>
+                            </div>
+                    </div>
+            </div>
+            </div>
             </>
          );
     }
