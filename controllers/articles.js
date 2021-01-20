@@ -7,6 +7,8 @@ module.exports = {
     search,
     create,
     getTopNews,
+    getArticle,
+    addComment,
 
 }
 
@@ -52,10 +54,32 @@ async function getTopNews (req, res) {
         res.json(articles.data)})
 }
 
+function getArticle(req, res){
+    Article.findById(req.params.id)
+    .then((article)=>{
+        res.json(article)
+    })
+}
+
+
+function addComment(req, res){
+    Article.findById(req.params.id)
+    .then((article)=>{
+        article.comments.push(req.body.formData)
+        article.save()
+    })
+    .then((article)=>{
+        res.json(article)
+    })
+}
 // have a function here that deals with the axios,get function, which take sthe form query and uses tempalte literals to append into our api url which will passed through 
 
 // create function, which takes req.body data from search results in Article Cards, push it to UserCollection
 
+// Article.findById(req.params.id)
+//     .then((article)=>{
+        
+//     })
 
 
 // API CALLS

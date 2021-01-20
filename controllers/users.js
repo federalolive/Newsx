@@ -6,6 +6,7 @@ module.exports = {
   removeArticleFromCollection,
   updateProfile,
   getUpdatedUser,
+  getCommenter,
 };
 
 function index(req, res) {
@@ -48,6 +49,13 @@ function updateProfile(req, res){
 
 function getUpdatedUser(req, res){
   User.findById(req.user._id)
+  .then((user)=>{
+    res.json(user)
+  })
+}
+
+function getCommenter(req, res){
+  User.findById(req.params.id)
   .then((user)=>{
     res.json(user)
   })

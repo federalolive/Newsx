@@ -50,3 +50,10 @@ export function getUser(){
 }, {mode: "cors"})
 .then(res => res.json())
 }
+
+export function getCommenter(commenterId){
+  return fetch(`${BASE_URL}commenter/${commenterId}`, {
+    headers: {'Authorization': 'Bearer ' + tokenService.getToken()},
+}, {mode: "cors"})
+.then(res => res.json())
+}

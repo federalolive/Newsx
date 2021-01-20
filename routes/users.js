@@ -12,6 +12,7 @@ router.get('/popusercollection', checkAuth, usersCtrl.populateUserCollection)
 router.put('/update', checkAuth, usersCtrl.updateProfile)
 router.put('/removearticle/:id', checkAuth, usersCtrl.removeArticleFromCollection)
 router.get('/updateprofile', checkAuth, usersCtrl.getUpdatedUser)
+router.get('/commenter/:id', checkAuth, usersCtrl.getCommenter)
 
 /*---------- Auth Checker ----------*/
 function checkAuth(req, res, next) {

@@ -47,14 +47,6 @@ class APIArticleCard extends Component {
                <p></p>
            )
            )} */}
-
-           {/* {
-           userArticleCollection.includes(article.url) 
-           ?
-           <h1>You have bookmarked this</h1>
-           :
-           <button onClick={this.handleSubmit}>Add Bookmark</button>
-        } */}
           
        </div>
          );
