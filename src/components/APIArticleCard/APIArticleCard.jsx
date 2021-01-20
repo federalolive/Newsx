@@ -23,33 +23,33 @@ class APIArticleCard extends Component {
         const article = this.props.article
         const userArticleCollection = this.props.userArticleCollection
         return ( 
-            <div>
-           <div>
-            <img src={article.urlToImage} height='200px' alt="article feature content"/>
-           </div>
-           <div>
-               <h4>{article.title}</h4>
-               <p>{article.author}</p>
-               <p>Date Published: {article.publishedAt}</p>
-               <p>Source: {article.source.name}</p>
-           </div>
-           <div>
-               <p>Synopsis: {article.description}</p>
-           </div>
-           <button onClick={this.handleSubmit}>Add Bookmark</button>
-
-           {/* {userArticleCollection.map((userArticle)=> (
-               userArticle.url === article.url 
-               ?
-               <button onClick={this.handleSubmit}>Add Bookmark</button>
-               
-               :
-               <p></p>
-           )
-           )} */}
-          
-       </div>
-         );
+        <div>
+                <div>
+                <div class="row">
+                <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-image">
+                        <img src={article.urlToImage} height='200px' alt="article feature content"/>
+                    </div>
+                    <div>
+                        <span class="card-title">{article.title}</span>
+                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    </div>
+                    <div class="card-content">
+                        <p>{article.author}</p>
+                        <p>Date Published: {article.publishedAt}</p>
+                        <p>Source: {article.source.name}</p>
+                    </div>
+                    <div>
+                        <p>Synopsis: {article.description}</p>
+                    </div>
+                    <button class="card-action" onClick={this.handleSubmit}>Add Bookmark</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        );
     }
 }
  

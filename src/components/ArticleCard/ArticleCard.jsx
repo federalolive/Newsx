@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import 'materialize-css';
+import { Button, Card, Row, Col } from 'react-materialize';
 
 class ArticleCard extends Component {
     state = { 
@@ -15,6 +17,8 @@ class ArticleCard extends Component {
         const article = this.props.article
         return ( 
             <>
+         
+
             <img src={article.urlToImage} alt="article-header"/>
             <h1>{article.title}</h1>
     
