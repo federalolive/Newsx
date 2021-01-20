@@ -33,8 +33,8 @@ class ArticleSearch extends Component {
         const user = this.props.user
         return ( 
             <>
-            <h1>Article Search Page</h1>
-            <form onSubmit={this.handleSubmit}> <input
+            <h3>Search</h3>
+            <form onSubmit={this.handleSubmit} className="topnews" > <input
                 type='text'
                 name='query'
                 value={this.state.formData.query}
@@ -42,7 +42,7 @@ class ArticleSearch extends Component {
             /> <button type='submit'>Submit</button> </form>
             
             {this.state.articles.length ?
-            <div className="article-list">
+            <div className="article-list topnews">
                 {this.state.articles.map(article => 
                 <APIArticleCard 
                     article={article}

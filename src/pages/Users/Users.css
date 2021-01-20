@@ -1,4 +1,7 @@
-div {
-    text-align: center;
-    margin: 40px 100px 0px;
+.users {
+    align-items: center;
+    width: 1500px;
+    margin: 0 auto;
+    padding: 100px;
+
 }

@@ -1,24 +1,7 @@
-main {
-  text-align: center;
+div.topnews {
+  align-items: center;
 }
 
-nav {
-  list-style: none;
-}
-
-div {
-  text-align: center;
-}
-
-ul {
-  list-style: none;
-}
-
-.nav-wrapper {
-  text-align: right;
-  margin: 0 -140px 0 0;
-}
-
-h3 {
-  margin: 10px 0
+img {
+  max-width: auto;
 }

@@ -18,6 +18,7 @@ class PersonalProfilePage extends Component {
     render() { 
         const user = this.state.user
         const userArticleCollection = this.props.userArticleCollection
+        
         return ( 
             <>
              <h4>Your Bio:</h4> {user.bio ? 
@@ -31,13 +32,14 @@ class PersonalProfilePage extends Component {
             }}>Update Profile Info</Link>
             <hr />
             <h4>Bookmarks:</h4>
+            <div className="bookmarks">
             {userArticleCollection.map((article) => 
                 <ArticleCard 
                 article = { article }
                 handleDeleteArticle={this.props.handleDeleteArticle}
                 />
-                
                 )}
+                </div>
             </>
         )
     }

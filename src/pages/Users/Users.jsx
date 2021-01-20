@@ -14,14 +14,16 @@ class Users extends Component {
 
   render() {
     return (
-      <div>
-        <h1>User List</h1>
+      <div className="users">
+        <h1>Users</h1>
+
         {this.state.users.map((user) => (
         <UserCard 
           user={user}
           key={user._id}
-        />
-        ))}
+          
+          />
+          ))}
       </div>
     );
   }

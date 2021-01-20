@@ -1,10 +1,12 @@
-div, form, h3 {
+div.topnews {
     align-items: center;
-    margin: 0px 200px
-}
+    width: 1500px;
+    margin: 0 auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+  }
 
 img {
-    align-items: center;
-    margin: 50px;
-}
-
+      max-width: auto;
+  }

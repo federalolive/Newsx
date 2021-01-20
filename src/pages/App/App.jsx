@@ -76,7 +76,6 @@ class App extends Component {
           path="/"
           render={() => (
             <main>
-              <h1>NEWSX</h1>
             </main>
           )}
         />
