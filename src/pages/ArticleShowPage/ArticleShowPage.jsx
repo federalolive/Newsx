@@ -6,7 +6,11 @@ import CommentCard from '../../components/CommentCard/CommentCard'
 
 class ArticleShowPage extends Component {
     state = { 
-        formData: {postedBy:this.props.user.name, postedByID:this.props.user._id, content:''},
+        formData: {
+            postedBy:this.props.user.name, 
+            postedByID:this.props.user._id, 
+            content:''
+        },
         article: [],
      }
 
@@ -15,7 +19,6 @@ class ArticleShowPage extends Component {
         const article = await articleAPI.getArticle(this.props.location.state.article._id)
         this.setState({article: article})
     } 
-    //  pass article id throughparams to find the article and create and push comment into its embedded array
 
     handleSubmit = e => {
         e.preventDefault()
