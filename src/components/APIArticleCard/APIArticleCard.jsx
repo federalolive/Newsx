@@ -23,11 +23,10 @@ class APIArticleCard extends Component {
         const article = this.props.article
         const userArticleCollection = this.props.userArticleCollection
         return ( 
-        <div>
-                <div>
+        <>
                 <div class="row">
                 <div class="col s12 m6">
-                <div class="card">
+                <div class="card" style={{width: 600}} >
                     <div class="card-image">
                         <img src={article.urlToImage} height='200px' alt="article feature content"/>
                         <span class="card-title">{article.title}</span>
@@ -47,8 +46,7 @@ class APIArticleCard extends Component {
                 </div>
                 </div>
                 </div>
-                </div>
-        </div>
+        </>
         );
     }
 }

@@ -17,8 +17,8 @@ class LandingPage extends Component {
 
     render() { 
         return ( 
-            <>
-                <div>
+            <div >
+                <div className="topnews">
                     {this.state.topNews.map(article =>
                       <APIArticleCard 
                       article={article}
@@ -28,7 +28,7 @@ class LandingPage extends Component {
                       />
                       )} 
                 </div>
-            </>
+            </div>
          );
     }
 }

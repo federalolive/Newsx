@@ -49,13 +49,14 @@ class PersonalProfilePage extends Component {
             }}>Update Profile Info</Link>
             <hr />
             <h4>Bookmarks:</h4>
+            <div className="bookmarks">
             {userArticleCollection.map((article) => 
                 <ArticleCard 
                 article = { article }
                 handleDeleteArticle={this.props.handleDeleteArticle}
                 />
-                
                 )}
+                </div>
                 <div>
                 {/* <form ref={this.formRef} onSubmit={this.handleSubmit}>
                 <div>
