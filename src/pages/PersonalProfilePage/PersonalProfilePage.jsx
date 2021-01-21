@@ -36,6 +36,7 @@ class PersonalProfilePage extends Component {
             {userArticleCollection.map((article) => 
                 <ArticleCard 
                 article = { article }
+                key={article._id}
                 handleDeleteArticle={this.props.handleDeleteArticle}
                 />
                 )}

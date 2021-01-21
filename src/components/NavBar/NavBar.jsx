@@ -8,10 +8,10 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
         <nav>
           <div className="nav-wrapper red">
-            <a href='/' class="brand-logo">NEWSX</a>
+            <a href='/' className="brand-logo">NEWSX</a>
 
             <ul id="nav-mobile" className="right">
-              <li className="nav-link" class="right hide-on-med-and-down">Welcome, {user.name}</li>
+              <li className="nav-link right hide-on-med-and-down">Welcome, {user.name}</li>
               <li><Link to="/users" className="nav-link">Users</Link></li>
               <li><Link to="/articles/search" className="nav-link">Article Search </Link></li>
               <li><Link to="/profile" className="nav-link">Profile</Link></li>

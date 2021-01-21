@@ -26,11 +26,9 @@ class App extends Component {
   async componentDidMount(){
     const userArticleCollection = await userService.getArticleCollection()
     this.setState({userArticleCollection: userArticleCollection})
-    console.log(userArticleCollection)
   }
 
    handleAddBookmark = async (formData) => {
-        console.log(formData)
         const newArticle = await articleAPI.create(formData)
         this.setState(state => ({ 
           userArticleCollection: [...state.userArticleCollection, newArticle]
@@ -57,10 +55,7 @@ class App extends Component {
   }
 
   handleUpdateUser = async formData =>{
-    console.log('this is the handle update function')
-    console.log(formData)
     const user = await userService.updateUserProfile(formData)
-    console.log(user)
     this.setState(state =>({
       user: user,
     }), ()=> this.props.history.push('/profile'))
@@ -108,10 +103,9 @@ class App extends Component {
         />
         <Route
           exact path="/articles/search"
-          render={({location, history}) =>
+          render={({history}) =>
             user ? <ArticleSearch 
               user = {this.state.user}
-              location={location}
               history={history}
               handleAddBookmark={this.handleAddBookmark}
             /> 
