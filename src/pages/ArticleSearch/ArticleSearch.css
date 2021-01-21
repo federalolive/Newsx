@@ -10,3 +10,15 @@ div.topnews {
 img {
       max-width: auto;
   }
+
+h1 { 
+  margin: 0 auto;
+  padding: 50px;
+  color: #1a237e;
+}
+
+
+.input {
+  background-color: rgb(243, 243, 241);
+  margin: 0 100px 0 100px;
+}

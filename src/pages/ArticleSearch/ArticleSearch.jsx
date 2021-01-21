@@ -33,13 +33,17 @@ class ArticleSearch extends Component {
         const user = this.props.user
         return ( 
             <>
-            <h3>Search</h3>
-            <form onSubmit={this.handleSubmit} className="topnews" > <input
+            <h1>Search</h1>
+            <form onSubmit={this.handleSubmit} className="topnews" > 
+            <div className='input'>      
+             <input
                 type='text'
                 name='query'
                 value={this.state.formData.query}
                 onChange={this.handleChange}          
-            /> <button type='submit'>Submit</button> </form>
+            /> 
+            </div>   
+            <button type='submit'>Search Articles</button> </form>
             
             {this.state.articles.length ?
             <div className="article-list topnews">
@@ -53,7 +57,7 @@ class ArticleSearch extends Component {
                 
                 )} </div>
                 :
-                <h3>Search the News!</h3>
+                <h3></h3>
                 }
             </>
          );
