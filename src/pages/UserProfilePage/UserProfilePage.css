@@ -5,36 +5,42 @@
 #user-avatar {
     width: 100px;
     height: 100px;
-    padding: 0px 0 80px 0;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;}
+    margin: 0 auto;
+   
+}
 
 .name {
     color: #1a237e;
-    margin: 10px 0 0 55px;
 }
 
-p {
-    margin: -70px 0 0 55px;
-}
-
-#bio {
+/* p {
+    margin: 10px 0 0 0;
     color: #1a237e;
-    margin: 100px 0 0 0;
+    padding: 0 0 30px 0;
+} */
+
+
+.bio-info {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    padding: 0 85px;
+    margin: 10px 0 0 0;
+    color: #1a237e;
     padding: 0 0 30px 0;
 }
+
 
 .profile-div {
     align-items: center;
     margin: 0 auto;
     flex-direction: column;
-    display: flex;
+   display: flex;
     justify-content: center;
     min-width: 500px;
 }
 
-.card {
+.userprofile-card {
     align-items: center;
     flex-direction: column;
     display: flex;
