@@ -10,9 +10,9 @@ const UserProfilePage = (props) => {
 <div className="profile-div">
   <div class="row">
     <div class="col s12 m7">
-      <div class="card" style={{ width: 400 }}>
+      <div className="card userprofile-card" style={{ width: 400 }}>
             <h2 className="name">{user.name}</h2>
-                <div >
+                <div className="bio-info">
                     <div id="user-avatar">
                     {user.avatar ? <img src={user.avatar} style={{width: 100}} alt="user image"/> : <p></p> }
                     </div>

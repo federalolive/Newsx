@@ -1,0 +1,18 @@
+.article-show-img {
+    max-width: 600px;
+    margin: -40px 0 0 50px;
+}
+
+.article-show-info {
+    margin: 0 0 0 50px;
+}
+
+.article-show-title {
+    font-weight: bold;
+}
+
+.comment-cards-main {
+    max-width: 600px;
+    margin: 0 0 0 50px;
+}
+

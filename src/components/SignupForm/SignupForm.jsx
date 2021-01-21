@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import authService from "../../services/authService";
+import './SignupForm.css'
 
 class SignupForm extends Component {
   state = {
@@ -43,6 +44,8 @@ class SignupForm extends Component {
         <h3>Sign Up</h3>
         <form autoComplete="off" onSubmit={this.handleSubmit}>
           <label htmlFor="name">Name: </label>
+
+          <div className="signup-input">
           <input
             type="text"
             autoComplete="off"
@@ -51,8 +54,12 @@ class SignupForm extends Component {
             name="name"
             onChange={this.handleChange}
           />
+          </div>
+
           <br />
           <label htmlFor="email">Email: </label>
+          
+          <div className="signup-input">
           <input
             type="text"
             autoComplete="off"
@@ -61,8 +68,12 @@ class SignupForm extends Component {
             name="email"
             onChange={this.handleChange}
           />
+          </div>
+
           <br />
           <label htmlFor="password">Password: </label>
+
+          <div className="signup-input">
           <input
             type="password"
             autoComplete="off"
@@ -71,8 +82,12 @@ class SignupForm extends Component {
             name="password"
             onChange={this.handleChange}
           />
+          </div>
+
           <br />
           <label htmlFor="confirm">Confirm Password: </label>
+
+          <div className="signup-input">
           <input
             type="password"
             autoComplete="off"
@@ -81,10 +96,12 @@ class SignupForm extends Component {
             name="passwordConf"
             onChange={this.handleChange}
           />
+          </div>
+
           <br />
           <button disabled={this.isFormInvalid()}>Sign Up</button>
           &nbsp;&nbsp;
-          <Link to="/">Cancel</Link>
+          <Link to="/"><button>Cancel</button></Link>
         </form>
       </div>
     );
