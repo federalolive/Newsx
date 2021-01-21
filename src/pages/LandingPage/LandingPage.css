@@ -1,11 +1,8 @@
 div.topnews {
     align-items: center;
     margin: 0 auto;
+  
     flex-direction: column;
     display: flex;
     justify-content: center;
   }
-
-div.box {
-  max-width: 10px;
-}

@@ -1,6 +1,5 @@
 div.topnews {
     align-items: center;
-    width: 1500px;
     margin: 0 auto;
     flex-direction: column;
     display: flex;
@@ -25,4 +24,5 @@ h1 {
 
 .btn-style {
   background-color: #1a237e;
+  color: white;
 }
