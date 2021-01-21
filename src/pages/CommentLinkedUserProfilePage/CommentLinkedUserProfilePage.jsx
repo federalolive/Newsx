@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as userService from '../../services/userService'
+import './CommentLinkedUserProfilePage.css'
 
 
 class CommentLinkedUserProfilePage extends Component {
