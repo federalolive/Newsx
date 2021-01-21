@@ -47,43 +47,60 @@ class ArticleShowPage extends Component {
                     <div>
                     
                     <h1>{article.title}</h1>
-                    <img src={article.urlToImage} alt="article-header"/>
-                    <p>{article.author}</p>
-                    <p>{article.publishedAt}</p>
-                    <p>{article.sourceName}</p>
-                    <p>{article.content} For the full article, click <a href={article.url} target="_blank" rel="noreferrer">here</a>.</p>
-                    <Link to={{
+
+                    <img className="article-show-img" src={article.urlToImage} alt="article-header"/>
+                    <br />
+                    <br />
+
+
+                    <p className="article-show-info article-show-title">{article.author}</p>
+                    <p className="article-show-info">{article.publishedAt}</p>
+                    <p className="article-show-info"> {article.sourceName}</p>
+                    <br />
+
+                    <p className="article-show-info">{article.content} 
+                    <br />
+                    For the full article, click <a href={article.url} target="_blank" rel="noreferrer">here</a>.</p>
+                    <br />
+
+                    <Link className="article-show-info" to={{
                         pathname: '/profile'
-                    }}> Return
+                    }}> <button> Return </button>
                     </Link>
                     </div>
                     :
-                    <h5>Loading Article Content</h5>
+                    <h5 className="article-show-info">Loading Article Content</h5>
                     }
-
-                <div>
-                    <p>Add a comment!</p>
+                <br />
+                <hr />
+                <br />
+                <div className="comment-cards-main">
+                    <h5>Add a comment:</h5>
                 <form onSubmit={this.handleSubmit}>
+                
+                <div className="card comment-card">
                     <input 
                         type="text"
                         name="content"
                         value={this.state.formData.content}
                         onChange={this.handleChange}
-                    />
+                        />
+                    
+                </div>
                     <button type="submit">Add Comment</button>
                 </form>
                 <div>
 
                     {article.comments ? article.comments.map((comment)=>
                     <CommentCard 
-                        comment={comment}
-                        user={this.props.user}
-                        key={comment._id}
+                    comment={comment}
+                    user={this.props.user}
+                    key={comment._id}
                     />
                     )
                     :
                     <p>Loading Comments</p>
-                    }
+                }
                 
                 </div>
                 </div>

@@ -39,6 +39,7 @@ class LoginPage extends Component {
         <h3>Log In</h3>
         <form autoComplete="off" onSubmit={this.handleSubmit}>
           <label htmlFor="email">Email: </label>
+          <div className="login-input">
           <input
             type="text"
             autoComplete="off"
@@ -47,8 +48,11 @@ class LoginPage extends Component {
             name="email"
             onChange={this.handleChange}
           />
+          </div>
           <br />
           <label htmlFor="password">Password: </label>
+          
+          <div className="login-input">
           <input
             type="password"
             autoComplete="off"
@@ -57,6 +61,7 @@ class LoginPage extends Component {
             name="pw"
             onChange={this.handleChange}
           />
+          </div>
           <br />
           <button className="btn green">Log In</button>&nbsp;&nbsp;&nbsp;
           <Link className="btn red" to="/">

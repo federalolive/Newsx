@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
+import './EditProfilePage.css'
 
 
 class EditProfilePage extends Component {
@@ -28,7 +29,7 @@ class EditProfilePage extends Component {
         return ( 
             <>
             <form ref={this.formRef} onSubmit={this.handleSubmit}>
-                <div>
+                <div className="edit-input">
                     <input 
                         type="text"
                         name="avatar"
@@ -37,7 +38,7 @@ class EditProfilePage extends Component {
                     />
                     <label htmlFor="">Profile Image Url</label>
                 </div>
-                <div>
+                <div className="edit-input">
                     <input 
                         type="text"
                         name="bio"
@@ -56,7 +57,7 @@ class EditProfilePage extends Component {
                             pathname: '/profile'
                         }}
                     >
-                            Cancel
+                            <button>Cancel</button>                    
                     </Link>
                 </div>
             </form>
