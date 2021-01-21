@@ -16,7 +16,7 @@ class Users extends Component {
   render() {
     return (
       <div className="users">
-        <h1>Users</h1>
+        <h1>Subscribers</h1>
         <ul>
         {this.state.users.map((user) => (
         <li><UserCard 
