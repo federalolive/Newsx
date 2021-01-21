@@ -1,6 +1,7 @@
 const axios = require('axios')
 const Article = require('../models/article')
 const User = require('../models/user')
+const Comment = require('../models/comment')
 
 module.exports = {
     search,
@@ -8,6 +9,8 @@ module.exports = {
     getTopNews,
     getArticle,
     addComment,
+    getComment,
+    addReply
 
 }
 
@@ -55,6 +58,7 @@ async function getTopNews (req, res) {
 
 function getArticle(req, res){
     Article.findById(req.params.id)
+    .populate('comments')
     .then((article)=>{
         res.json(article)
     })
@@ -65,11 +69,25 @@ function getArticle(req, res){
 
 
 function addComment(req, res){
-    Article.findById(req.params.id)
-    .then((article)=>{
-        article.comments.push(req.body.formData)
-        article.save()
-        res.json(article)
+    Comment.create(req.body.formData)
+    .then((comment)=>{
+        Article.findById(req.params.id)
+        .populate('comments')
+        .then((article)=>{
+            article.comments.push(comment._id)
+            article.save()
+            res.json(article)
+        })
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+}
+
+function getComment(req, res){
+    Comment.findById(req.params.id)
+    .then((comment)=>{
+        res.json(comment)
     })
     .catch((err)=>{
         console.log(err)
@@ -77,5 +95,14 @@ function addComment(req, res){
 }
 
 
-
-
+function addReply(req, res){
+    Comment.findById(req.params.id)
+    .then((comment)=>{
+        comment.replies.push(req.body.formData)
+        comment.save()
+        res.json(comment)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+}

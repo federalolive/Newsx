@@ -1,3 +1,4 @@
+
 import tokenService from './tokenService'
 const BASE_URL = '/api/articles/'
 
@@ -32,13 +33,30 @@ export function getTopNews () {
 
 export function getArticle(articleId){
   return fetch (`${BASE_URL}${articleId}`, {
-    headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
+    headers: {'Authorization': 'Bearer ' + tokenService.getToken()},
 }, {mode: 'cors'})
 .then((res => res.json()))
 }
 
 export function addComment(idandFormData){
   return fetch (`${BASE_URL}${idandFormData.article._id}/addcomment`, {
+    method: "PUT",
+      headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
+        body: JSON.stringify(idandFormData)
+}, {mode: 'cors'})
+.then(res => res.json())
+}
+
+export function getComment(commentId){
+  return fetch(`${BASE_URL}article/comment/${commentId}`, {
+    headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
+  }, {mode: 'cors'})
+.then(res => res.json())
+}
+
+export function addReply(idandFormData){
+  console.log(idandFormData)
+  return fetch (`${BASE_URL}/${idandFormData.comment._id}/addreply`, {
     method: "PUT",
       headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
         body: JSON.stringify(idandFormData)
