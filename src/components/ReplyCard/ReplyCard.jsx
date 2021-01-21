@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 
 const ReplyCard = (props) => {
+
     const commenterId = props.reply.postedBy
     return ( 
         <>
@@ -18,3 +19,14 @@ const ReplyCard = (props) => {
 }
  
 export default ReplyCard;
+
+// class ReplyCard extends Component {
+//     state = { 
+//         comment: []
+//      }
+//     render() { 
+//         return (  );
+//     }
+// }
+ 
+// export default ReplyCard;
