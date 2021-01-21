@@ -25,7 +25,7 @@ class APIArticleCard extends Component {
       <>
         <div class="row">
           <div class="col s12 m6">
-            <div class="card" style={{ width: 600 }}>
+            <div class="card" style={{ width: 425 }}>
               <div class="card-image">
                 <img
                   src={article.urlToImage}
@@ -46,11 +46,11 @@ class APIArticleCard extends Component {
               </div>
               {this.props.user ? (
                 <button
-                  class="btn-floating halfway-fab waves-effect waves-light red"
+                  class="btn-floating halfway-fab waves-effect waves-light"
                   onClick={this.handleSubmit}
                 >
                   {" "}
-                  <i class="material-icons">add</i>
+                  <i class="material-icons indigo darken-4">add</i>
                 </button>
               ) : (
                 <p></p>
