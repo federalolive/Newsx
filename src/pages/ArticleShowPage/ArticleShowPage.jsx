@@ -34,29 +34,32 @@ class ArticleShowPage extends Component {
 
     handleAddComment = async (IdandFormData) =>{
         const updatedArticle = await articleAPI.addComment(IdandFormData)
-        this.setState({
+        this.setState(state => ({
             article: updatedArticle
-        })
+        }))
     }
 
     render() { 
         const article = this.state.article
-        console.log(article.comments)
         return ( 
             <>
-                <div>
+                {article ? 
+                    <div>
                     
-                <h1>{article.title}</h1>
-                <img src={article.urlToImage} alt="article-header"/>
-                <p>{article.author}</p>
-                <p>{article.publishedAt}</p>
-                <p>{article.sourceName}</p>
-                <p>{article.content} For the full article, click <a href={article.url} target="_blank" rel="noreferrer">here</a>.</p>
-                <Link to={{
-                    pathname: '/profile'
-                }}> Return
-                </Link>
-                </div>
+                    <h1>{article.title}</h1>
+                    <img src={article.urlToImage} alt="article-header"/>
+                    <p>{article.author}</p>
+                    <p>{article.publishedAt}</p>
+                    <p>{article.sourceName}</p>
+                    <p>{article.content} For the full article, click <a href={article.url} target="_blank" rel="noreferrer">here</a>.</p>
+                    <Link to={{
+                        pathname: '/profile'
+                    }}> Return
+                    </Link>
+                    </div>
+                    :
+                    <h5>Loading Article Content</h5>
+                    }
 
                 <div>
                     <p>Add a comment!</p>
@@ -74,7 +77,7 @@ class ArticleShowPage extends Component {
                     {article.comments ? article.comments.map((comment)=>
                     <CommentCard 
                         comment={comment}
-                        user={this.props.user.name}
+                        user={this.props.user}
                         key={comment._id}
                     />
                     )
@@ -90,16 +93,3 @@ class ArticleShowPage extends Component {
 }
  
 export default ArticleShowPage;
-
-
-
-// class component to hold state for comment formData
-
-
-// contain headline, author, date published, source Url, article content
-// link back to profile page
-
-// button to expand comments section 
-// function to map over comments rendering a Comment Card for each
-
-// form to add comment
