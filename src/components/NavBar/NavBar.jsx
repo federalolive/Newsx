@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import 'materialize-css';
+import './NavBar.css'
 
 const NavBar = ({ user, handleLogout }) => {
     return (
@@ -8,7 +9,7 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
         <nav>
           <div className="nav-wrapper indigo darken-4">
-            <a href='/' className="brand-logo left hide-on-small-and-down">NEWSX</a>
+            <a href='/' className="custom-logo brand-logo left hide-on-small-and-down">NEWSX</a>
 
             <ul id="nav-mobile" className="right">
    
