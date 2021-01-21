@@ -19,14 +19,3 @@ const ReplyCard = (props) => {
 }
  
 export default ReplyCard;
-
-// class ReplyCard extends Component {
-//     state = { 
-//         comment: []
-//      }
-//     render() { 
-//         return (  );
-//     }
-// }
- 
-// export default ReplyCard;

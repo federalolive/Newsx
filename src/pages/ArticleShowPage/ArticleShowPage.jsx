@@ -23,7 +23,7 @@ class ArticleShowPage extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.handleAddComment(this.state)
-        this.setState({formdata: {content: ''}})
+        this.setState({formData:{content: ''}})
     }
 
     handleChange = e =>{

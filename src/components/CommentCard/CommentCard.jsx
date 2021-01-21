@@ -20,11 +20,7 @@ class CommentCard extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.handleAddReply(this.state)
-        const formData = {
-            postedBy: this.props.user.name, 
-            postedByID: this.props.user._id, 
-            content: ''}
-        this.setState({formData:formData})
+        this.setState({formData:{content: ''}})
     }
 
     handleChange = e =>{
@@ -40,7 +36,7 @@ class CommentCard extends Component {
     }
 
      render (){
-         const comment = this.props.comment
+         const comment = this.state.comment
          const commenterId = comment.postedByID
          return(
          <>
