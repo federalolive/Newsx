@@ -71,16 +71,22 @@ class ArticleShowPage extends Component {
                     :
                     <h5 className="article-show-info">Loading Article Content</h5>
                     }
-
-                <div>
-                    <p>Add a comment!</p>
+                <br />
+                <hr />
+                <br />
+                <div className="comment-cards-main">
+                    <h5>Add a comment:</h5>
                 <form onSubmit={this.handleSubmit}>
+                
+                <div className="card comment-card">
                     <input 
                         type="text"
                         name="content"
                         value={this.state.formData.content}
                         onChange={this.handleChange}
                         />
+                    
+                </div>
                     <button type="submit">Add Comment</button>
                 </form>
                 <div>
