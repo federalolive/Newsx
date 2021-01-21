@@ -45,15 +45,6 @@ class App extends Component {
     this.setState({ user: authService.getUser() });
   };
 
-  handleDeleteArticle = async id =>{
-    await userService.removeArticleFromCollection(id)
-    let idx = this.state.userArticleCollection.findIndex((a)=>a._id === id)
-    const userArticleCollection = this.state.userArticleCollection.splice(idx, 1)
-    this.setState(state=>({
-      userArticleCollection: userArticleCollection
-    }), ()=> this.props.history.push('/profile'))
-  }
-
   handleUpdateUser = async formData =>{
     const user = await userService.updateUserProfile(formData)
     this.setState(state =>({
@@ -136,9 +127,6 @@ class App extends Component {
           exact path="/profile"
           render={() => 
             user ? <PersonalProfilePage 
-            user = {this.state.user}
-            userArticleCollection={this.state.userArticleCollection}
-            handleDeleteArticle={this.handleDeleteArticle}
         /> 
           : 
           <Redirect to="/login" />

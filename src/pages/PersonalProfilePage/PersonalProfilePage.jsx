@@ -15,9 +15,16 @@ class PersonalProfilePage extends Component {
         this.setState({user: user})
     }
 
+    handleDeleteArticle = async id =>{
+       const user = await userService.removeArticleFromCollection(id)
+        this.setState(state=>({
+          user: user
+        }))
+      }
+
     render() { 
         const user = this.state.user
-        const userArticleCollection = this.props.userArticleCollection
+        const userArticleCollection = this.state.user.articleCollection
         
         return ( 
             <>
@@ -33,13 +40,18 @@ class PersonalProfilePage extends Component {
             <hr />
             <h4>Bookmarks:</h4>
             <div className="bookmarks">
-            {userArticleCollection.map((article) => 
+            {userArticleCollection 
+                ? 
+            userArticleCollection.map((article) => 
                 <ArticleCard 
                 article = { article }
                 key={article._id}
-                handleDeleteArticle={this.props.handleDeleteArticle}
+                handleDeleteArticle={this.handleDeleteArticle}
                 />
-                )}
+                )
+                : 
+                <h1>Loading Articles</h1>
+            }
                 </div>
             </>
         )
@@ -47,16 +59,5 @@ class PersonalProfilePage extends Component {
 }
  
 export default PersonalProfilePage;
-
-
-
-// Class component: needs to hold state so we can delete, and read
-
-// map over userColelction, and render Article Cards for each item.
-
-
-// render bio, avatar, if you're signed in, and you're you, render inputs and buttons to update bio and image url
-
-
 
 
