@@ -1,0 +1,44 @@
+.user-profile {
+    padding: 50px; 
+}
+
+#user-avatar {
+    width: 100px;
+    height: 100px;
+    padding: 0px 0 80px 0;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;}
+
+.name {
+    color: #1a237e;
+    margin: 10px 0 0 55px;
+}
+
+p {
+    margin: -70px 0 0 55px;
+}
+
+#bio {
+    color: #1a237e;
+    margin: 100px 0 0 0;
+    padding: 0 0 30px 0;
+}
+
+.profile-div {
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    min-width: 500px;
+}
+
+.card {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    min-width: 500px;
+    margin: 0 auto;
+}

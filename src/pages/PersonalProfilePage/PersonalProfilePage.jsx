@@ -28,17 +28,23 @@ class PersonalProfilePage extends Component {
         
         return ( 
             <>
-             <h4>Your Bio:</h4> {user.bio ? 
-                <h5>{user.bio}</h5>
+             <h1>{user.name}</h1> 
+             <div>
+             {user.avatar ? <img id="profile-avatar" src={user.avatar} alt="user image" />  : <img src="" /> }
+             {user.bio ? 
+                <h5>Bio: {user.bio}</h5>
                 :
                 <h5>Tell us and other users a bit about yourself, share a social handle, or leave us with a favorite quote!</h5>
             }
+        
             <Link to={{
                 pathname: '/profile/edit',
                 state: {user}
-            }}>Update Profile Info</Link>
+            }}><button>Update Profile Info</button></Link>
+            </div>
             <hr />
-            <h4>Bookmarks:</h4>
+            
+            <h4>Your bookmarks:</h4>
             <div className="bookmarks">
             {userArticleCollection 
                 ? 

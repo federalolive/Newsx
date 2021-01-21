@@ -16,13 +16,25 @@ h1 {
   color: #1a237e;
 }
 
-
 .input {
   background-color: rgb(243, 243, 241);
   margin: 0 100px 0 100px;
+  width: 600px;
+  position: absolute;
 }
 
 .btn-style {
   background-color: #1a237e;
   color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100px;
+  padding: 8px 50px;
 }
+
+/* form {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+} */
