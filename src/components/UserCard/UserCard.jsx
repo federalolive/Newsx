@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import './UserCard.css'
 
 const UserCard = ({ user }) => {
     return ( 
         <div>
-            <p>{ user.name }</p>
-            <Link to={{
+           
+            <Link className='userlink' to={{
                 pathname:'/users/show',
                 state: { user }
             }}
-            > View Profile
-            </Link>
+            > { user.name }
+            </Link> 
+           
         </div>
      );
 }

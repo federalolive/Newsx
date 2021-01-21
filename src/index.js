@@ -7,6 +7,7 @@ import * as serviceWorker from "./serviceWorker";
 import 'materialize-css/dist/css/materialize.min.css'
 
 ReactDOM.render(
+
   <Router>
     <React.StrictMode>
       <Route render={({ history }) => <App history={history} />} />
