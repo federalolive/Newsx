@@ -17,7 +17,7 @@ class LandingPage extends Component {
 
     render() { 
         return ( 
-            <div >
+            <div className="box">
                 <div className="topnews">
                     {this.state.topNews.map(article =>
                       <APIArticleCard 

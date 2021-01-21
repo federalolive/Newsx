@@ -1,12 +1,11 @@
 div.topnews {
     align-items: center;
-    width: 1500px;
     margin: 0 auto;
     flex-direction: column;
     display: flex;
     justify-content: center;
   }
 
-img {
-      max-width: auto;
-  }
+div.box {
+  max-width: 10px;
+}

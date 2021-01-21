@@ -7,6 +7,7 @@ const NavBar = ({ user, handleLogout }) => {
     return (
     <>
       {user ?
+      <div className="navbar-fixed">
         <nav>
           <div className="nav-wrapper indigo darken-4">
             <a href='/' className="custom-logo brand-logo left hide-on-small-and-down">NEWSX</a>
@@ -21,15 +22,19 @@ const NavBar = ({ user, handleLogout }) => {
             </ul>
           </div>
         </nav>
+        </div>
       :
+      <div className="navbar-fixed">
         <nav>
-          <div className="nav-wrapper">
+          <div className="nav-wrapper indigo darken-4">
+            <a href='/' className="custom-logo brand-logo left hide-on-small-and-down">NEWSX</a>
             <ul id="nav-mobile" className="right">
               <li><Link to="/login" className="nav-link">Log In</Link></li>
               <li><Link to="/signup" className="nav-link">Sign Up</Link></li>
             </ul>
           </div>
         </nav>
+        </div>
       }
     </>
   )
