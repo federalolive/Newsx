@@ -7,5 +7,28 @@ div.bookmarks {
   }
 
 img {
-      max-width: auto;
+    max-width: auto;
+  }
+
+  h5 {
+    padding: -70px 0 0 55px;
+    margin: -70px 0 0 55px;
+  }
+
+  button {
+    background-color: #1a237e;
+    color: white;
+    margin: 20px 0 0 55px;
+  }
+
+  h4 {
+    padding: 20px 0 20px 55px;
+    color: #1a237e;
+  }
+
+  #profile-avatar {
+    height: 100px;
+    width: 100px;
+    padding: -70px 0 0 55px;
+    margin: -70px 0 0 55px;
   }
