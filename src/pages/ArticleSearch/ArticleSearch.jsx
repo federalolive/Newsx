@@ -15,6 +15,8 @@ class ArticleSearch extends Component {
          // prevents user from triggering an autmatic refresh of the page and api call before they finish typing and submitting their query
          e.preventDefault()
          this.handleArticleSearch(this.state.formData)
+         const formData = {query:''}
+         this.setState({ formData:formData })
      }
      handleChange= (e) => {
          // handle change is resetting for formData in state with the input from the user, which will then be passed into our handleArticleSearch function above

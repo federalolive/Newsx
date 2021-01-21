@@ -17,7 +17,6 @@ class LandingPage extends Component {
 
     render() { 
         return ( 
-            <div className="box">
                 <div className="topnews">
                     {this.state.topNews.map(article =>
                       <APIArticleCard 
@@ -28,7 +27,6 @@ class LandingPage extends Component {
                       />
                       )} 
                 </div>
-            </div>
          );
     }
 }
