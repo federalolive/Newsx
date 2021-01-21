@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 
 const ReplyCard = (props) => {
+
     const commenterId = props.reply.postedBy
     return ( 
         <>
