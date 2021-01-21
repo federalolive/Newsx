@@ -103,10 +103,9 @@ class App extends Component {
         />
         <Route
           exact path="/articles/search"
-          render={({location, history}) =>
+          render={({history}) =>
             user ? <ArticleSearch 
               user = {this.state.user}
-              location={location}
               history={history}
               handleAddBookmark={this.handleAddBookmark}
             /> 
