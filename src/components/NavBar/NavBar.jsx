@@ -7,7 +7,7 @@ const NavBar = ({ user, handleLogout }) => {
     <>
       {user ?
         <nav>
-          <div className="nav-wrapper red">
+          <div className="nav-wrapper indigo darken-4">
             <a href='/' className="brand-logo">NEWSX</a>
 
             <ul id="nav-mobile" className="right">

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getAllUsers } from "../../services/userService";
 import UserCard from '../../components/UserCard/UserCard'
+import './Users.css'
 
 class Users extends Component {
   state = {
@@ -22,13 +23,13 @@ class Users extends Component {
           user={user}
           key={user._id}
           
-          />
-          </li>
+          /> 
+        </li>
           ))}
-          </ul>
-      </div>
+        </ul>
+      </div> 
     );
-  }
+  } 
 }
 
 export default Users;
