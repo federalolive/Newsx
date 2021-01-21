@@ -22,3 +22,7 @@ h1 {
   background-color: rgb(243, 243, 241);
   margin: 0 100px 0 100px;
 }
+
+.btn-style {
+  background-color: #1a237e;
+}

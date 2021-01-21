@@ -43,7 +43,7 @@ class ArticleSearch extends Component {
                 onChange={this.handleChange}          
             /> 
             </div>   
-            <button type='submit'>Search Articles</button> </form>
+            <button className="btn-style" type='submit'>Search Articles</button> </form>
             
             {this.state.articles.length ?
             <div className="article-list topnews">
