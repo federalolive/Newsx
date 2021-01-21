@@ -32,8 +32,6 @@ function removeArticleFromCollection(req, res){
     let idx = user.articleCollection.findIndex((a)=>a._id == req.params.id)
     user.articleCollection.splice(idx, 1)
     user.save()
-  })
-  .then((user)=>{
     res.json(user)
   })
   .catch((err)=>{
@@ -53,6 +51,7 @@ function updateProfile(req, res){
 
 function getUpdatedUser(req, res){
   User.findById(req.user._id)
+  .populate('articleCollection')
   .then((user)=>{
     res.json(user)
   })

@@ -15,9 +15,17 @@ class PersonalProfilePage extends Component {
         this.setState({user: user})
     }
 
+    handleDeleteArticle = async id =>{
+       const user = await userService.removeArticleFromCollection(id)
+        this.setState(state=>({
+          user: user
+        }))
+      }
+
     render() { 
         const user = this.state.user
-        const userArticleCollection = this.props.userArticleCollection
+        console.log(user.articleCollection)
+        const userArticleCollection = this.state.user.articleCollection
         
         return ( 
             <>
@@ -33,13 +41,18 @@ class PersonalProfilePage extends Component {
             <hr />
             <h4>Bookmarks:</h4>
             <div className="bookmarks">
-            {userArticleCollection.map((article) => 
+            {userArticleCollection 
+                ? 
+            userArticleCollection.map((article) => 
                 <ArticleCard 
                 article = { article }
                 key={article._id}
-                handleDeleteArticle={this.props.handleDeleteArticle}
+                handleDeleteArticle={this.handleDeleteArticle}
                 />
-                )}
+                )
+                : 
+                <h1>Loading Articles</h1>
+            }
                 </div>
             </>
         )
