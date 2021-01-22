@@ -26,6 +26,11 @@ class LandingPage extends Component {
                       user={this.state.user}
                       />
                       )} 
+
+                <div>
+                Fake news got you down? Click <a href="https://snap-out-of-it.herokuapp.com/Login" target="_blank">here</a>!
+                </div>
+
                 </div>
          );
     }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "materialize-css";
 import { Button, Card, Row, Col } from "react-materialize";
+import './ArticleCard.css';
 
 class ArticleCard extends Component {
   state = {
@@ -40,7 +41,7 @@ class ArticleCard extends Component {
                 </Link>
               </div>
 
-              <div class="card-action" onClick={this.handleSubmit}>
+              <div class="card-action remove waves-effect waves-light" onClick={this.handleSubmit}>
                 Remove From Bookmarks
               </div>
             </div>

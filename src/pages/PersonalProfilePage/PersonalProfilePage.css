@@ -29,6 +29,27 @@ img {
   #profile-avatar {
     height: 100px;
     width: 100px;
-    padding: -70px 0 0 55px;
-    margin: -70px 0 0 55px;
+
   }
+
+  .personal-card {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    min-width: 500px;
+    margin: 0 auto;
+    padding: 0 0 20px 0; 
+    max-width: 600px;
+  }
+
+  .profile-div {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-width: 500px;
+}
+
+.personal-name {
+  margin: -20px 0 -20px 0;
+}

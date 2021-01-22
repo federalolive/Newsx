@@ -27,9 +27,9 @@ class PersonalProfilePage extends Component {
         const userArticleCollection = this.state.user.articleCollection
         
         return ( 
-            <>
-             <h1>{user.name}</h1> 
-             <div>
+            <div className="profile-div">
+             <div class="card personal-card">
+             <h1 className="personal-name">{user.name}</h1> 
              {user.avatar ? <img id="profile-avatar" src={user.avatar} alt="user image" />  : <img src="" /> }
              {user.bio ? 
                 <h5>Bio: {user.bio}</h5>
@@ -59,7 +59,7 @@ class PersonalProfilePage extends Component {
                 <h1>Loading Articles</h1>
             }
                 </div>
-            </>
+            </div>
         )
     }
 }

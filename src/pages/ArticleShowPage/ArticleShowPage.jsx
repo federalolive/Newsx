@@ -77,9 +77,9 @@ class ArticleShowPage extends Component {
                 <br />
                 <div className="comment-cards-main">
                     <h5>Add a comment:</h5>
-                <form onSubmit={this.handleSubmit}>
+                <form className="comment-form" onSubmit={this.handleSubmit}>
                 
-                <div className="card comment-card">
+                <div className="card comment-card-input">
                     <input 
                         type="text"
                         name="content"

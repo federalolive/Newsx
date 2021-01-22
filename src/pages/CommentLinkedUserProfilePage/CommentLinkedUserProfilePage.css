@@ -1,0 +1,22 @@
+
+.comment-user-card {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    min-width: 500px;
+    margin: 0 auto;
+}
+
+.comment-profile-div {
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    min-width: 500px;
+}
+
+.comment-user-img {
+    padding: 10px;
+}

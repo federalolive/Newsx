@@ -8,8 +8,8 @@ const UserProfilePage = (props) => {
         <div>
 
 <div className="profile-div">
-  <div class="row">
-    <div class="col s12 m7">
+  <div className="row">
+    <div className="col s12 m7">
       <div className="card userprofile-card" style={{ width: 400 }}>
             <h2 className="name">{user.name}</h2>
                 <div className="bio-info">

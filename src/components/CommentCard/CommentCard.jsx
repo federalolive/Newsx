@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import * as articleAPI from '../../services/article-api'
 import ReplyCard from '../ReplyCard/ReplyCard';
+import './CommentCard.css'
 
 class CommentCard extends Component {
     state = { 
@@ -40,39 +41,45 @@ class CommentCard extends Component {
          const commenterId = comment.postedByID
          return(
          <>
-            <p>{comment.content}</p>
-            <p>PostedBy: <Link
+         <hr />
+            <h5><Link
                 to={{
                     pathname: '/profile/article/commenter',
                     state: {commenterId}
                 }}
-            >{comment.postedBy}</Link>
-            </p>
+                >{comment.postedBy}</Link> says:
+            </h5>
+            <p>"{comment.content}"</p>
+
 
 
           <div>
-                    <p>Reply To This Comment</p>
                 <form onSubmit={this.handleSubmit}>
+
+                <div className="card reply-card-form ">
                     <input 
                         type="text"
                         name="content"
                         value={this.state.formData.content}
                         onChange={this.handleChange}
                     />
+                </div>
                     <button type="submit">Reply</button>
                 </form>
-                <div>
-
+                <div className="replies">
+                    <ol>                    
                     {comment.replies ? comment.replies.map((reply)=>
-                    <ReplyCard 
+                    <li><ReplyCard 
                         reply={reply}
                         user={this.props.user}
                         key={reply._id}
-                    />
+                    /></li>
                     )
+                    
                     :
                     <p>Loading Replies</p>
-                    }
+                }
+                </ol>
                 
                 </div>   
                 </div>

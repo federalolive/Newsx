@@ -14,19 +14,22 @@ class CommentLinkedUserProfilePage extends Component {
     } 
 
     render() { 
+        console.log(this.state.user.avatar)
         return ( 
-            <>
-            <div>
-                {/* conditional rendering of avatar image with default if none provided use ternary */}
+            <div className="comment-profile-div">
+            <div className="card comment-user-card">
+            <div id="user-avatar">
+                    {this.state.user.avatar ? <img src={this.state.user.avatar} className="comment-user-img" style={{width: 100}} alt="user image"/> : <p></p> }
+                    </div>
                 <p>{this.state.user.name}</p>
              {this.state.user.bio 
                 ? 
             <p>{this.state.user.bio}</p>
             :
-            <p>{this.state.user.name} doesn't trust the internet and thushas opted to not share about themselves</p> 
+            <p>{this.state.user.name} doesn't trust the internet and thus has opted to not share about themselves</p> 
             }
             </div>
-            </>
+            </div>
          );
     }
 }
