@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import 'materialize-css';
+// import 'materialize-css';
 import './NavBar.css'
 
 const NavBar = ({ user, handleLogout }) => {
