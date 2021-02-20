@@ -2,7 +2,8 @@ div.topnews {
     align-items: center;
     margin: 0 auto;
     padding: 60px;  
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     display: flex;
     justify-content: center;
   }

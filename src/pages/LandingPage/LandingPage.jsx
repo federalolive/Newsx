@@ -17,6 +17,7 @@ class LandingPage extends Component {
 
     render() { 
         return ( 
+            <>
                 <div className="topnews">
                     {this.state.topNews.map(article =>
                       <APIArticleCard 
@@ -26,12 +27,11 @@ class LandingPage extends Component {
                       user={this.state.user}
                       />
                       )} 
-
-                <div>
+                </div>
+                <div className="topnews">
                 Fake news got you down? Click <a href="https://snap-out-of-it.herokuapp.com/Login" target="_blank">here</a>!
                 </div>
-
-                </div>
+                </>
          );
     }
 }
