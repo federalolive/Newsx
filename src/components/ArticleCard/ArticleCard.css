@@ -6,3 +6,7 @@
 .remove:hover{
     color: rgb(238, 107, 107)
 }
+
+.article-title{
+    opacity: 75%;
+}

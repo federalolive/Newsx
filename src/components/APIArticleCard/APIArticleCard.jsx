@@ -31,6 +31,7 @@ class APIArticleCard extends Component {
                   src={article.urlToImage}
                   height="200px"
                   alt="article feature content"
+                  className="responsive-img"
                 />
                 <span class="card-title">{article.title}</span>
               </div>
