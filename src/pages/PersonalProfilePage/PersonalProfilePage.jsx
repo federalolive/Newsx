@@ -21,39 +21,6 @@ class PersonalProfilePage extends Component {
     }));
   };
 
-  render() {
-    const user = this.state.user;
-    const userArticleCollection = this.state.user.articleCollection;
-
-    return (
-      <div className="profile-div">
-        <div class="card personal-card">
-          <h1 className="personal-name">{user.name}</h1>
-          {user.avatar ? (
-            <img id="profile-avatar" src={user.avatar} alt="user image" />
-          ) : (
-            <img src="" />
-          )}
-          {user.bio ? (
-            <h5>Bio: {user.bio}</h5>
-          ) : (
-            <h5>
-              Tell us and other users a bit about yourself, share a social
-              handle, or leave us with a favorite quote!
-            </h5>
-          )}
-
-          <Link
-            to={{
-              pathname: "/profile/edit",
-              state: { user },
-            }}
-          >
-            <button>Update Profile Info</button>
-          </Link>
-        </div>
-        <hr />
-
     render() { 
         const user = this.state.user
         const userArticleCollection = this.state.user.articleCollection
@@ -80,16 +47,16 @@ class PersonalProfilePage extends Component {
             <div className="bookmarks">
             {userArticleCollection 
                 ? 
-            userArticleCollection.map((article) => 
+            userArticleCollection.map(article => 
                 <ArticleCard 
                 article = { article }
                 key={article._id}
                 handleDeleteArticle={this.handleDeleteArticle}
               />
-            ))
-          ) : (
+            )
+           : 
             <h1>Loading Articles</h1>
-          )}
+            }
         </div>
       </div>
     );

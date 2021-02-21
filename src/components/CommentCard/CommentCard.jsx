@@ -72,38 +72,26 @@ class CommentCard extends Component {
             <button type="submit">Reply</button>
           </form>
           <div className="replies">
+            {comment.replies ? 
             <ol>
-              {comment.replies ? (
-                comment.replies.map((reply) => (
-                  <li>
-                    <ReplyCard
-                      reply={reply}
-                      user={this.props.user}
-                      key={reply._id}
-                    />
-                </div>
-                    <button type="submit" className="z-depth-2">Reply</button>
-                </form>
-                <div className="replies">
-                    <ol>                    
-                    {comment.replies ? comment.replies.map((reply)=>
-                    <li><ReplyCard 
-                        reply={reply}
-                        user={this.props.user}
-                        key={reply._id}
-                    /></li>
-                    )
-                    
-                    :
-                    <p>Loading Replies</p>
-                }
-                </ol>
-                
-                </div>   
-                </div>
-         </>
-         )
-        }
-    }
+              {comment.replies.map(reply => 
+              <li>
+                <ReplyCard
+                  reply={reply}
+                  user={this.props.user}
+                  key={reply._id}
+                />
+              </li>
+              )}
+            </ol>
+            :
+            <p>Loading Replies</p>
+              }
+          </div>
+        </div>
+      </>
+    );
+  }
+}
 
 export default CommentCard;

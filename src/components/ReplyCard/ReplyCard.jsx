@@ -22,8 +22,4 @@ const ReplyCard = (props) => {
   );
 };
 
-<<<<<<< HEAD
 export default ReplyCard;
-=======
-export default ReplyCard;
->>>>>>> post-project-styling
