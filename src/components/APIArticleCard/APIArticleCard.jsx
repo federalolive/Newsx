@@ -26,7 +26,7 @@ class APIArticleCard extends Component {
         <div class="row">
           <div class="col s12 m6">
             <div class="card z-depth-5" style={{ width: 425 }}>
-              <div class="card-image">
+              <div class="card-image z-depth-1">
                 <img
                   src={article.urlToImage}
                   height="200px"
@@ -34,14 +34,12 @@ class APIArticleCard extends Component {
                 />
                 <span class="card-title">{article.title}</span>
               </div>
-
               <div class="card-content">
-                <p>{article.author}</p>
-                <p>Date Published: {article.publishedAt}</p>
-                <p>Source: {article.source.name}</p>
+                <p><b>Written by:</b> {article.author}</p>
+                <p><b>Date Published:</b> {article.publishedAt}</p>
+                <p><b>Source:</b> {article.source.name}</p>
               </div>
-
-              <div>
+              <div class="card-content">
                 <p>Synopsis: {article.description}</p>
               </div>
               {this.props.user ? (

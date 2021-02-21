@@ -21,13 +21,9 @@ class ArticleCard extends Component {
         <div class="row">
           <div class="col s12 m7">
             <div class="card z-depth-5" style={{ width: 600 }}>
-              <div class="card-image">
+              <div class="card-image z-depth-1">
                 <img src={article.urlToImage} alt="article-header" />
                 <span class="card-title">{article.title}</span>
-              </div>
-
-              <div class="card-content">
-                <p>{article.title}</p>
               </div>
               <div class="card-action">
                 <Link
