@@ -20,7 +20,7 @@ class ArticleCard extends Component {
       <>
         <div class="row">
           <div class="col s12 m7">
-            <div class="card" style={{ width: 600 }}>
+            <div class="card z-depth-5" style={{ width: 600 }}>
               <div class="card-image">
                 <img src={article.urlToImage} alt="article-header" />
                 <span class="card-title">{article.title}</span>

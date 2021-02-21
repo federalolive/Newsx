@@ -25,7 +25,7 @@ class APIArticleCard extends Component {
       <>
         <div class="row">
           <div class="col s12 m6">
-            <div class="card" style={{ width: 425 }}>
+            <div class="card z-depth-5" style={{ width: 425 }}>
               <div class="card-image">
                 <img
                   src={article.urlToImage}
