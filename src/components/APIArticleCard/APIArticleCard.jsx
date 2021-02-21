@@ -33,7 +33,7 @@ class APIArticleCard extends Component {
                   alt="article feature content"
                   className="responsive-img"
                 />
-                <span class="card-title">{article.title}</span>
+                <span class="article-title"><p className="card-title blue-grey darken-4">{article.title}</p></span>
               </div>
               <div class="card-content">
                 <p><b>Written by:</b> {article.author}</p>

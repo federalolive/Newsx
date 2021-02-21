@@ -6,10 +6,8 @@ const UserProfilePage = (props) => {
   return (
     <div>
       <div className="profile-div">
-        <div className="row">
-          <div className="col s12 m7">
             <div
-              className="card userprofile-card card z-depth-5"
+              className="userprofile-card card z-depth-5"
               style={{ width: 400 }}
             >
               <h2 className="name">{user.name}</h2>
@@ -25,6 +23,7 @@ const UserProfilePage = (props) => {
                 ) : (
                   ""
                 )}
+                <br/>
                 <div id="bio">
                   {user.bio ? (
                     <p className="card-content center">{user.bio}</p>
@@ -39,8 +38,6 @@ const UserProfilePage = (props) => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 

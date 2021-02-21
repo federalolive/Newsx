@@ -9,4 +9,6 @@
 
 .article-title{
     opacity: 75%;
+    text-shadow: 1px 1px 1px #42a5f5,
+    3px 3px 5px blue;
 }
