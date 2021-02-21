@@ -22,10 +22,10 @@ class CommentLinkedUserProfilePage extends Component {
             {this.state.user.avatar ? 
             <img
                 src={this.state.user.avatar}
-                className="comment-user-img responsive-img"
+                className="comment-user-img responsive-img z-depth-1"
                 style={{ width: 100 }}
                 alt="user image" />  : 
-              <p></p>
+              ''
             }
           </div>
           <p className="card card-title">{this.state.user.name}</p>
