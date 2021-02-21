@@ -49,14 +49,14 @@ class ArticleShowPage extends Component {
                     
                     <h1>{article.title}</h1>
 
-                    <img className="article-show-img" src={article.urlToImage} alt="article-header"/>
+                    <img className="article-show-img z-depth-1" src={article.urlToImage} alt="article-header"/>
                     <br />
                     <br />
 
 
-                    <p className="article-show-info article-show-title">{article.author}</p>
-                    <p className="article-show-info">{article.publishedAt}</p>
-                    <p className="article-show-info"> {article.sourceName}</p>
+                    <p className="article-show-info article-show-title"><b>Written By:</b>{article.author}</p>
+                    <p className="article-show-info"><b>Date:</b>{article.publishedAt}</p>
+                    <p className="article-show-info"> <b>Source:</b>{article.sourceName}</p>
                     <br />
 
                     <p className="article-show-info">{article.content} 
@@ -66,7 +66,7 @@ class ArticleShowPage extends Component {
 
                     <Link className="article-show-info" to={{
                         pathname: '/profile'
-                    }}> <button> Return </button>
+                    }}> <button className="z-depth-2"> Return </button>
                     </Link>
                     </div>
                     :
@@ -88,7 +88,7 @@ class ArticleShowPage extends Component {
                         />
                     
                 </div>
-                    <button type="submit">Add Comment</button>
+                    <button type="submit" className="z-depth-2">Add Comment</button>
                 </form>
                 <div>
 

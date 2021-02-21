@@ -30,7 +30,7 @@ class PersonalProfilePage extends Component {
             <div className="profile-div">
              <div class="card personal-card z-depth-5">
              <h1 className="personal-name center">{user.name}</h1> 
-             {user.avatar ? <img id="profile-avatar" src={user.avatar} alt="user image" />  : <img src="" /> }
+             {user.avatar ? <img id="profile-avatar" className="z-depth-1" src={user.avatar} alt="user image" />  : <img src="" /> }
              {user.bio ? 
                 <h5 className="card-content center">Bio: {user.bio}</h5>
                 :

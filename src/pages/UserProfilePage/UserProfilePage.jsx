@@ -16,7 +16,7 @@ const UserProfilePage = (props) => {
               <div className="bio-info">
                 {user.avatar ? (
                   <div id="user-avatar">
-                    <img
+                    <img className="z-depth-1"
                       src={user.avatar}
                       style={{ width: 100 }}
                       alt="user image"

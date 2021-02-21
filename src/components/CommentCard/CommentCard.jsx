@@ -64,7 +64,7 @@ class CommentCard extends Component {
                         onChange={this.handleChange}
                     />
                 </div>
-                    <button type="submit">Reply</button>
+                    <button type="submit" className="z-depth-2">Reply</button>
                 </form>
                 <div className="replies">
                     <ol>                    
