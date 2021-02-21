@@ -31,9 +31,8 @@ class ArticleSearch extends Component {
         const user = this.props.user
         return ( 
             <>
-            <h1> </h1>
-            <form onSubmit={this.handleSubmit} className="topnews" > 
-            <div className='input'>      
+            <form onSubmit={this.handleSubmit} className="topnews"> 
+            <div className='input z-depth-2'>      
              <input
                 type='text'
                 name='query'
@@ -42,7 +41,7 @@ class ArticleSearch extends Component {
             /> 
 
             </div>   
-            <button className="btn-style" type='submit' >Search Articles</button> 
+            <button className="btn-style z-depth-2" type='submit'>Search Articles</button> 
 
             </form>
             

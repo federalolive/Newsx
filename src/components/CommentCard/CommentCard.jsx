@@ -81,17 +81,29 @@ class CommentCard extends Component {
                       user={this.props.user}
                       key={reply._id}
                     />
-                  </li>
-                ))
-              ) : (
-                <p>Loading Replies</p>
-              )}
-            </ol>
-          </div>
-        </div>
-      </>
-    );
-  }
-}
+                </div>
+                    <button type="submit" className="z-depth-2">Reply</button>
+                </form>
+                <div className="replies">
+                    <ol>                    
+                    {comment.replies ? comment.replies.map((reply)=>
+                    <li><ReplyCard 
+                        reply={reply}
+                        user={this.props.user}
+                        key={reply._id}
+                    /></li>
+                    )
+                    
+                    :
+                    <p>Loading Replies</p>
+                }
+                </ol>
+                
+                </div>   
+                </div>
+         </>
+         )
+        }
+    }
 
 export default CommentCard;
