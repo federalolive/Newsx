@@ -23,33 +23,33 @@ class APIArticleCard extends Component {
     const article = this.props.article;
     return (
       <>
-        <div class="row">
-          <div class="col s12 m6">
-            <div class="card z-depth-5" style={{ width: 425 }}>
-              <div class="card-image z-depth-1">
+        <div className="row">
+          <div className="col s12 m6">
+            <div className="card z-depth-5" style={{ width: 425 }}>
+              <div className="card-image z-depth-1">
                 <img
                   src={article.urlToImage}
                   height="200px"
                   alt="article feature content"
                   className="responsive-img"
                 />
-                <span class="article-title"><p className="card-title blue-grey darken-4">{article.title}</p></span>
+                <span className="article-title"><p className="card-title blue-grey darken-4">{article.title}</p></span>
               </div>
-              <div class="card-content">
+              <div className="card-content">
                 <p><b>Written by:</b> {article.author}</p>
                 <p><b>Date Published:</b> {article.publishedAt}</p>
                 <p><b>Source:</b> {article.source.name}</p>
               </div>
-              <div class="card-content">
+              <div className="card-content">
                 <p>Synopsis: {article.description}</p>
               </div>
               {this.props.user ? (
                 <button
-                  class="btn-floating halfway-fab waves-effect waves-light"
+                  className="btn-floating halfway-fab waves-effect waves-light"
                   onClick={this.handleSubmit}
                 >
                   {" "}
-                  <i class="material-icons indigo darken-4">add</i>
+                  <i className="material-icons indigo darken-4">add</i>
                 </button>
               ) : (
                 <p></p>

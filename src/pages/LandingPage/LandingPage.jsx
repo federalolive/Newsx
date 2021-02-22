@@ -18,6 +18,9 @@ class LandingPage extends Component {
     render() { 
         return ( 
             <>
+            <div className="topnews responsive center z-depth-2 article-title">
+              <h1>Breaking News Highlights</h1>
+            </div>
                 <div className="topnews">
                     {this.state.topNews.map(article =>
                       <APIArticleCard 
@@ -29,7 +32,8 @@ class LandingPage extends Component {
                       )} 
                 </div>
                 <div className="topnews">
-                Fake news got you down? Click <a href="https://snap-out-of-it.herokuapp.com/Login" target="_blank">here</a>!
+                <p>Fake news got you down? Click <a href="https://snap-out-of-it.herokuapp.com/Login" target="_blank">here</a>!
+                </p>
                 </div>
                 </>
          );
