@@ -18,16 +18,10 @@ class ArticleCard extends Component {
     const article = this.props.article;
     return (
       <>
-        <div class="row">
-          <div class="col s12 m7">
-            <div class="card" style={{ width: 600 }}>
+            <div class="card z-depth-5 center" style={{'max-width': '500px'}}>
               <div class="card-image">
-                <img src={article.urlToImage} alt="article-header" />
-                <span class="card-title">{article.title}</span>
-              </div>
-
-              <div class="card-content">
-                <p>{article.title}</p>
+                <img className="responsive-img z-depth-1" src={article.urlToImage} alt="article-header"/>
+                <span class="article-title"><p className="card-title blue-grey darken-4">{article.title}</p></span>
               </div>
               <div class="card-action">
                 <Link
@@ -45,8 +39,6 @@ class ArticleCard extends Component {
                 Remove From Bookmarks
               </div>
             </div>
-          </div>
-        </div>
       </>
     );
   }

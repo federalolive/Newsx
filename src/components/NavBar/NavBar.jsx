@@ -10,7 +10,7 @@ const NavBar = ({ user, handleLogout }) => {
       <div className="navbar-fixed">
         <nav>
           <div className="nav-wrapper indigo darken-4">
-            <a href='/' className="custom-logo brand-logo left hide-on-small-and-down">NEWSX</a>
+            <a href='/' className="custom-logo brand-logo left hide-on-small-and-down">NewsX</a>
 
             <ul id="nav-mobile" className="right">
    

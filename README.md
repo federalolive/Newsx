@@ -31,13 +31,14 @@ Login
 ![Login](https://i.imgur.com/WLXn9SQ.png)
 
 Home
-![Home](https://i.imgur.com/ZaHJiIx.png)
+![Home](https://i.imgur.com/ttqm7J0.png)
 
 User Profile
-![User Profile](https://i.imgur.com/T877uln.png)
+![User Profile](https://i.imgur.com/SHoJQx9.png)
 
 Article Page
-![Article](https://i.imgur.com/rjauTJg.png)
+![Article](https://i.imgur.com/vdNvZM9.png)
+![Article](https://i.imgur.com/kSDysiu.png)
 
 
 --------------------------------------------------
@@ -50,3 +51,9 @@ Article Page
 * We would like to add more search parameters, like date or author.
 * We would like to spend more time styling the app.
 * We would like to restructure the replies schema from embedded to referenced.
+
+## Attributions
+
+* favicon: "stack of newspapers" by Olena Panasovska from [the Noun Project](https://thenounproject.com/search/?q=newspaper+stack&i=2261432)
+
+* We make reference to our fellow cohort engineers' project, [Snap Out Of It](https://snap-out-of-it.herokuapp.com/Login) on our landing page, an app build to provide a place to destress and reaffrim yourself when the world and it's goings on become too intense. Check it out!

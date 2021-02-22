@@ -47,7 +47,7 @@ function create(req, res){
 }
 
 async function getTopNews (req, res) {
-    await axios.get (`https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.API_KEY}&pageSize=5`) 
+    await axios.get (`https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.API_KEY}&pageSize=4`) 
     .then ((articles) => {
         res.json(articles.data)
     })
