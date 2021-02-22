@@ -15,23 +15,20 @@ class CommentLinkedUserProfilePage extends Component {
   }
 
   render() {
-    console.log(this.state.user.avatar);
     return (
       <div className="comment-profile-div">
-        <div className="card comment-user-card">
+        <div className="card comment-user-card z-depth-5">
           <div id="user-avatar">
-            {this.state.user.avatar ? (
-              <img
+            {this.state.user.avatar ? 
+            <img
                 src={this.state.user.avatar}
-                className="comment-user-img"
+                className="comment-user-img responsive-img z-depth-1"
                 style={{ width: 100 }}
-                alt="user image"
-              />
-            ) : (
-              <p></p>
-            )}
+                alt="user image" />  : 
+              ''
+            }
           </div>
-          <p>{this.state.user.name}</p>
+          <p className="card card-title">{this.state.user.name}</p>
           {this.state.user.bio ? (
             <p>{this.state.user.bio}</p>
           ) : (

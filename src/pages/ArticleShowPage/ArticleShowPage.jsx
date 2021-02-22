@@ -60,11 +60,37 @@ class ArticleShowPage extends Component {
             <br />
             <br />
 
+            <img
+              className="article-show-img z-depth-1"
+              src={article.urlToImage}
+              alt="article-header"
+            />
+            <br />
+            <br />
+
+            <p className="article-show-info">
+              {article.content}
+              <br />
+              For the full article, click{" "}
+              <a href={article.url} target="_blank" rel="noreferrer">
+                here
+              </a>
+              .
+            </p>
+            <br />
             <p className="article-show-info article-show-title">
+              <b>Written By:</b>
               {article.author}
             </p>
-            <p className="article-show-info">{article.publishedAt}</p>
-            <p className="article-show-info"> {article.sourceName}</p>
+            <p className="article-show-info">
+              <b>Date:</b>
+              {article.publishedAt}
+            </p>
+            <p className="article-show-info">
+              {" "}
+              <b>Source:</b>
+              {article.sourceName}
+            </p>
             <br />
 
             <p className="article-show-info">
@@ -85,7 +111,7 @@ class ArticleShowPage extends Component {
               }}
             >
               {" "}
-              <button> Return </button>
+              <button className="z-depth-2"> Return </button>
             </Link>
           </div>
         ) : (
@@ -105,7 +131,9 @@ class ArticleShowPage extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <button type="submit">Add Comment</button>
+            <button type="submit" className="z-depth-2">
+              Add Comment
+            </button>
           </form>
           <div>
             {article.comments ? (
