@@ -32,7 +32,7 @@ class App extends Component {
         const newArticle = await articleAPI.create(formData)
         this.setState(state => ({ 
           userArticleCollection: [...state.userArticleCollection, newArticle]
-        }), ()=> this.props.history.push('/articles/search'))
+        }), ()=> this.props.history.push('/profile'))
     }
   
   handleLogout = () => {
