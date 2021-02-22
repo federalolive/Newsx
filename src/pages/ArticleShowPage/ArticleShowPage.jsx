@@ -51,32 +51,12 @@ class ArticleShowPage extends Component {
         {article ? (
           <div>
             <h1>{article.title}</h1>
-
-            <img
-              className="article-show-img"
-              src={article.urlToImage}
-              alt="article-header"
-            />
-            <br />
-            <br />
-
             <img
               className="article-show-img z-depth-1"
               src={article.urlToImage}
               alt="article-header"
             />
             <br />
-            <br />
-
-            <p className="article-show-info">
-              {article.content}
-              <br />
-              For the full article, click{" "}
-              <a href={article.url} target="_blank" rel="noreferrer">
-                here
-              </a>
-              .
-            </p>
             <br />
             <p className="article-show-info article-show-title">
               <b>Written By:</b>
