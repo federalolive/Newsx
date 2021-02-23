@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 import './ArticleCard.css';
 
 class ArticleCard extends Component {
-  state = {
-    formData: { id: this.props.article._id },
-  };
+  // state = {
+  //   formData: { id: this.props.article._id },
+  // };
 
   handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.handleDeleteArticle(this.state.formData.id);
+    // e.preventDefault();
+    // this.props.handleDeleteArticle(this.state.formData.id);
+    this.props.handleDeleteArticle(this.props.article._id);
   };
 
   render() {

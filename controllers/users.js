@@ -28,8 +28,10 @@ function populateUserCollection(req, res){
 
 function removeArticleFromCollection(req, res){
   User.findById(req.user._id)
+  .populate('articleCollection')
   .then((user)=>{
     let idx = user.articleCollection.findIndex((a)=>a._id == req.params.id)
+    // let idx = user.articleCollection.indexOf(req.params.id)
     user.articleCollection.splice(idx, 1)
     user.save()
     res.json(user)
