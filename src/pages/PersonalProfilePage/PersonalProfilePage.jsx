@@ -16,10 +16,19 @@ class PersonalProfilePage extends Component {
 
   handleDeleteArticle = async (id) => {
     const user = await userService.removeArticleFromCollection(id);
-    this.setState((state) => ({
-      user: user,
-    }));
+    this.setState({
+      user: user
+    });
+    console.log(user)
   };
+
+  // handleDeleteArticle = async (id) => {
+  //   await userService.removeArticleFromCollection(id);
+  //   const user = userService.getUser()
+  //   this.setState({
+  //     user: user
+  //   });
+  // };
 
     render() { 
         const user = this.state.user
