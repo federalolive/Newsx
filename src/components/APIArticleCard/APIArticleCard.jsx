@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './APIArticleCard.css';
 
 class APIArticleCard extends Component {
   state = {
@@ -33,7 +34,7 @@ class APIArticleCard extends Component {
                   alt="article feature content"
                   className="responsive-img"
                 />
-                <span className="article-title"><p className="card-title blue-grey darken-4">{article.title}</p></span>
+                <span><p className="card-title article-title blue-grey darken-4">{article.title}</p></span>
               </div>
               <div className="card-content">
                 <p><b>Written by:</b> {article.author}</p>

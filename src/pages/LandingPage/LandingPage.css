@@ -1,9 +1,14 @@
 div.topnews {
-    align-items: center;
-    margin: 0 auto;
-    padding: 60px;  
-    flex-direction: row;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: center;
-  }
+  align-items: center;
+  margin: 0 auto;
+  padding: 60px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+
+.article-title {
+  opacity: 75%;
+  text-shadow: 1px 1px 1px #42a5f5, 3px 3px 5px blue;
+}
