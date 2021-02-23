@@ -23,7 +23,7 @@ class ArticleCard extends Component {
                 <img 
                 className="responsive-img z-depth-1" 
                 src={article.urlToImage} alt="article-header"/>
-                <span className="article-title"><p className="card-title blue-grey darken-4">{article.title}</p></span>
+                <span><p className="card-title article-title blue-grey darken-4">{article.title}</p></span>
               </div>
               <div className="card-action">
                 <Link

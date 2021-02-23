@@ -35,11 +35,12 @@ class LoginPage extends Component {
   render() {
     const {email, pw} = this.state
     return (
-      <main className="Login">
-        <h3>Log In</h3>
-        <form autoComplete="off" onSubmit={this.handleSubmit}>
+      <div className="center topnews">
+        <form 
+        autoComplete="off" 
+        onSubmit={this.handleSubmit}>
           <label htmlFor="email">Email: </label>
-          <div className="login-input">
+          <div className="login-input z-depth-2">
           <input
             type="text"
             autoComplete="off"
@@ -52,7 +53,7 @@ class LoginPage extends Component {
           <br />
           <label htmlFor="password">Password: </label>
           
-          <div className="login-input">
+          <div className="login-input z-depth-2">
           <input
             type="password"
             autoComplete="off"
@@ -69,7 +70,7 @@ class LoginPage extends Component {
           </Link>
         </form>
         <p>{this.state.message}</p>
-      </main>
+      </div>
     );
   }
 }

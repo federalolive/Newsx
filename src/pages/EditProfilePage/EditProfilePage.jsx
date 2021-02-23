@@ -28,8 +28,8 @@ class EditProfilePage extends Component {
 
   render() {
     return (
-      <>
-        <form ref={this.formRef} onSubmit={this.handleSubmit}>
+      <div className="topnews" >
+        <form className="z-depth-2" ref={this.formRef} onSubmit={this.handleSubmit}>
           <div className="edit-input">
             <input
               type="text"
@@ -48,8 +48,8 @@ class EditProfilePage extends Component {
             />
             <label htmlFor="">Personal Bio</label>
           </div>
-          <div>
-            <button type="submit" disabled={this.state.invalidForm}>
+          <div className="center">
+            <button className="z-depth-2" type="submit" disabled={this.state.invalidForm}>
               Update Profile
             </button>
             <Link
@@ -57,11 +57,11 @@ class EditProfilePage extends Component {
                 pathname: "/profile",
               }}
             >
-              <button>Cancel</button>
+              <button className="z-depth-2">Cancel</button>
             </Link>
           </div>
         </form>
-      </>
+      </div>
     );
   }
 }
